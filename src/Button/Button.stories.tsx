@@ -1,4 +1,4 @@
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered/react';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -21,7 +21,10 @@ storiesOf('Button', module)
   })
   .add('basics', () => (
     <Aurora>
-      <Button variant={select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'light')}>
+      <Button
+        variant={select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'light')}
+        rounded={boolean('rounded', false)}
+      >
         {select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'light')}
       </Button>
     </Aurora>

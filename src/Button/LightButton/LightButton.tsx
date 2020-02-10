@@ -14,6 +14,11 @@ export const LightButton: React.FC<LightButton> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
+  const {
+    variant,
+    ...buttonProps
+  } = props;
+
   const lightButtonStyles = css`
     color: ${colorTheme[props.variant].base()};
     background-color: #fff;
@@ -24,7 +29,7 @@ export const LightButton: React.FC<LightButton> = (props) => {
   `;
 
   return (
-    <Button styles={cx(lightButtonStyles, props.styles)}>
+    <Button {...buttonProps} styles={cx(lightButtonStyles, props.styles)}>
       {props.children}
     </Button>
   );

@@ -1,3 +1,4 @@
+import Color from 'color';
 import { css, cx } from 'emotion';
 import React from 'react';
 import { useContainer } from 'unstated-next';
@@ -6,7 +7,9 @@ import { ComponentProps } from '../ComponentProps';
 import { getFontColorByBackground } from '../Theme/Color/Utils';
 import { ThemeStore } from '../Theme/ThemeStore';
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>, ComponentProps {}
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>, ComponentProps {
+  rounded?: boolean;
+}
 export const Button: React.FC<ButtonProps> = (props) => {
   const themeStore = useContainer(ThemeStore);
   const colorTheme = themeStore.getColorTheme();
@@ -14,6 +17,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const {
     variant,
     styles,
+    rounded,
     ...buttonProps
   } = props;
 
@@ -26,10 +30,14 @@ export const Button: React.FC<ButtonProps> = (props) => {
     padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    border-radius: 4px;
+    border-radius: ${rounded ? '100px' : '4px'};
     outline: none;
     transition:
       background-color 100ms ease-in-out;
+
+    &:hover {
+      background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.black.base()), .1).toString()};
+    }
   `;
 
   return (
