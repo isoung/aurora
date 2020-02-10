@@ -1,0 +1,36 @@
+{
+  "name": "aurora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start-storybook -p 9557"
+  },
+  "author": "Isaiah Soung",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@storybook/addons": "^5.3.12",
+    "@storybook/addon-centered": "^5.3.12",
+    "@storybook/addon-knobs": "^5.3.12",
+    "@storybook/addon-storysource": "^5.3.12",
+    "@storybook/react": "^5.3.12",
+    "@storybook/theming": "^5.3.12",
+    "@types/color": "^3.0.1",
+    "@types/node": "^13.7.0",
+    "@types/react": "16.9.14",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "storybook-readme": "^5.0.8",
+    "tslint": "^6.0.0"
+  },
+  "dependencies": {
+    "color": "^3.1.2",
+    "emotion": "^10.0.27",
+    "react": "^16.12.0",
+    "typescript": "^3.7.5",
+    "unstated-next": "^1.1.0"
+  }
+}
