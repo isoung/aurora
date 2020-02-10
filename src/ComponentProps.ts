@@ -1,6 +1,9 @@
 import { ColorThemeSelectionTypes } from './Theme/Color/ColorPalette';
 
-export interface ComponentProps {
-  variant?: ColorThemeSelectionTypes;
+export interface ComponentStyleProps {
   styles?: string;
+}
+
+export interface ComponentProps extends ComponentStyleProps {
+  variant?: ColorThemeSelectionTypes;
 }

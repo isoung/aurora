@@ -6,10 +6,12 @@ import React from 'react';
 import { Aurora } from '../Aurora';
 import { ColorThemeSelectionTypes, defaultColorTheme } from '../Theme/Color/ColorPalette';
 import { Button } from './Button';
+import { ButtonGroup } from './ButtonGroup/ButtonGroup';
 import { LightButton, LightButtonVariants } from './LightButton/LightButton';
 
 const ButtonReadme = require('./README.md');
 const LightButtonReadme = require('./LightButton/README.md');
+const ButtonGroupReadme = require('./ButtonGroup/README.md');
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
@@ -57,4 +59,20 @@ storiesOf('Button', module)
         </LightButton>
       </Aurora>
     );
-  });
+  })
+  .addDecorator(withKnobs)
+  .addDecorator(centered)
+  .addParameters({
+    readme: {
+      sidebar: ButtonGroupReadme.default
+    }
+  })
+  .add('button group', () => (
+    <Aurora>
+      <ButtonGroup rounded={boolean('rounded', false)}>
+        <Button variant='primary'>Left</Button>
+        <Button>Middle</Button>
+        <Button>Right</Button>
+      </ButtonGroup>
+    </Aurora>
+  ));
