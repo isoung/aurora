@@ -2,11 +2,11 @@ import Color from 'color';
 
 type ColorThemeSelectionFn = () => string;
 export interface ColorThemeSelection {
-  base: ColorThemeSelectionFn;
-  light: ColorThemeSelectionFn;
-  lighter: ColorThemeSelectionFn;
-  dark: ColorThemeSelectionFn;
-  darker: ColorThemeSelectionFn;
+  base?: ColorThemeSelectionFn;
+  light?: ColorThemeSelectionFn;
+  lighter?: ColorThemeSelectionFn;
+  dark?: ColorThemeSelectionFn;
+  darker?: ColorThemeSelectionFn;
 }
 
 export interface ColorTheme {

@@ -10,7 +10,7 @@ export interface FontTheme {
 }
 
 export const defaultFontTheme: FontTheme = {
-  fontFamily: 'Nunito Sans',
+  fontFamily: 'Open Sans',
   info: '10px',
   small: '12px',
   normal: '16px',
