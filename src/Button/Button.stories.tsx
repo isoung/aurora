@@ -49,7 +49,10 @@ storiesOf('Button', module)
 
     return (
       <Aurora>
-        <LightButton variant={select('variant', lightButtonKnobChoices, 'primary')}>
+        <LightButton
+          variant={select('variant', lightButtonKnobChoices, 'primary')}
+          rounded={boolean('rounded', false)}
+        >
           {select('variant', lightButtonKnobChoices, 'primary')}
         </LightButton>
       </Aurora>
