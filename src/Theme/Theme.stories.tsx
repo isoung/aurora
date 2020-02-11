@@ -1,12 +1,12 @@
 import centered from '@storybook/addon-centered/react';
 import { storiesOf } from '@storybook/react';
+import Color from 'color';
 import { css } from 'emotion';
 import React from 'react';
 
 import { Aurora } from '../Aurora';
 import { Button } from '../Button/Button';
 import { ThemeStore } from '../Theme/ThemeStore';
-import Color from 'color';
 
 const ThemeReadme = require('./README.md');
 

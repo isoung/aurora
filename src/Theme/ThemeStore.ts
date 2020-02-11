@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createContainer } from 'unstated-next';
 
 import { ColorTheme, defaultColorTheme } from '../Theme/Color/ColorPalette';
-import { FontTheme, defaultFontTheme } from './Font/FontTheme';
+import { defaultFontTheme, FontTheme } from './Font/FontTheme';
 
 export interface ThemeStoreState {
   colorTheme?: ColorTheme;

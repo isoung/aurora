@@ -11,6 +11,7 @@ import { ButtonGroup } from './ButtonGroup/ButtonGroup';
 import { LightButton, LightButtonVariants } from './LightButton/LightButton';
 
 const ButtonReadme = require('./README.md');
+const CloseButtonReadme = require('./CloseButton/README.md');
 const LightButtonReadme = require('./LightButton/README.md');
 const ButtonGroupReadme = require('./ButtonGroup/README.md');
 
@@ -75,11 +76,11 @@ storiesOf('Buttons', module)
   ))
   .addParameters({
     readme: {
-      sidebar: ButtonGroupReadme.default
+      sidebar: CloseButtonReadme.default
     }
   })
   .add('close button', () => (
     <Aurora>
-      <CloseButton onClose={() => alert('Close clicked')}/>
+      <CloseButton onClose={() => alert('Close button clicked')}/>
     </Aurora>
   ));

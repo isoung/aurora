@@ -19,6 +19,7 @@
     "object-literal-key-quotes": false,
     "object-literal-shorthand": false,
     "object-literal-sort-keys": [false],
+    "ordered-imports": true,
     "prefer-conditional-expression": false,
     "quotemark": [true, "single", "avoid-escape", "jsx-single"],
     "semicolon": [true, "always"],

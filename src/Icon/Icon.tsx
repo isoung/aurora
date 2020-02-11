@@ -20,7 +20,7 @@ export const Icon: React.FC<IconProps> = (props) => {
   const {
     variant,
     styles,
-    interactable,
+    isInteractable,
     interactableVariant,
     icon,
     size,
@@ -29,10 +29,10 @@ export const Icon: React.FC<IconProps> = (props) => {
 
   const iconStyles = css`
     color: ${colorTheme[variant].base()};
-    cursor: ${interactable ? 'pointer' : 'auto'};
+    cursor: ${isInteractable ? 'pointer' : 'auto'};
 
     &:hover {
-      color: ${interactable ? colorTheme[interactableVariant].base() : colorTheme[variant].base()};
+      color: ${isInteractable ? colorTheme[interactableVariant].base() : colorTheme[variant].base()};
     }
   `;
 
@@ -45,6 +45,6 @@ export const Icon: React.FC<IconProps> = (props) => {
 };
 Icon.defaultProps = {
   variant: 'primary',
-  interactable: false,
+  isInteractable: false,
   interactableVariant: 'secondary'
 };

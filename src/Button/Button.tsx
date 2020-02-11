@@ -8,7 +8,7 @@ import { ComponentProps } from '../ComponentProps';
 import { getFontColorByBackground } from '../Theme/Color/Utils';
 import { ThemeStore } from '../Theme/ThemeStore';
 
-export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement>, ComponentProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ComponentProps {
   rounded?: boolean;
 }
 export const Button: React.FC<ButtonProps> = (props) => {
