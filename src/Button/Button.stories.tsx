@@ -5,6 +5,7 @@ import React from 'react';
 
 import { Aurora } from '../Aurora';
 import { ColorThemeSelectionTypes, defaultColorTheme } from '../Theme/Color/ColorPalette';
+import { CloseButton } from './CloseButton/CloseButton';
 import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup/ButtonGroup';
 import { LightButton, LightButtonVariants } from './LightButton/LightButton';
@@ -13,7 +14,7 @@ const ButtonReadme = require('./README.md');
 const LightButtonReadme = require('./LightButton/README.md');
 const ButtonGroupReadme = require('./ButtonGroup/README.md');
 
-storiesOf('Button', module)
+storiesOf('Buttons', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
   .addParameters({
@@ -31,8 +32,6 @@ storiesOf('Button', module)
       </Button>
     </Aurora>
   ))
-  .addDecorator(withKnobs)
-  .addDecorator(centered)
   .addParameters({
     readme: {
       sidebar: LightButtonReadme.default
@@ -60,8 +59,6 @@ storiesOf('Button', module)
       </Aurora>
     );
   })
-  .addDecorator(withKnobs)
-  .addDecorator(centered)
   .addParameters({
     readme: {
       sidebar: ButtonGroupReadme.default
@@ -74,5 +71,15 @@ storiesOf('Button', module)
         <Button>Middle</Button>
         <Button>Right</Button>
       </ButtonGroup>
+    </Aurora>
+  ))
+  .addParameters({
+    readme: {
+      sidebar: ButtonGroupReadme.default
+    }
+  })
+  .add('close button', () => (
+    <Aurora>
+      <CloseButton onClose={() => alert('Close clicked')}/>
     </Aurora>
   ));

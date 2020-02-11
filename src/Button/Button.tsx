@@ -1,5 +1,6 @@
 import Color from 'color';
 import { css, cx } from 'emotion';
+import { motion } from 'framer-motion';
 import React from 'react';
 import { useContainer } from 'unstated-next';
 
@@ -36,14 +37,22 @@ export const Button: React.FC<ButtonProps> = (props) => {
       background-color 100ms ease-in-out;
 
     &:hover {
+      background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.white.base()), .2).toString()};
+    }
+
+    &:focus {
+      background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.white.base()), .2).toString()};
+    }
+
+    &:active {
       background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.black.base()), .1).toString()};
     }
   `;
 
   return (
-    <button {...buttonProps} className={cx(buttonStyles, styles)}>
+    <motion.button {...buttonProps as any} whileTap={{ scale: .95 }} className={cx(buttonStyles, styles)}>
       {props.children}
-    </button>
+    </motion.button>
   );
 };
 Button.defaultProps = {

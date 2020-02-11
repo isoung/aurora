@@ -10,7 +10,7 @@ import Color from 'color';
 
 const ThemeReadme = require('./README.md');
 
-storiesOf('Theme', module)
+storiesOf('Themes', module)
   .addDecorator(centered)
   .addParameters({
     readme: {

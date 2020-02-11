@@ -66,7 +66,7 @@ export const defaultColorTheme: ColorTheme = {
     darker: () => Color(defaultColorTheme.dark.base()).darken(.2).toString()
   },
   light: {
-    base: () => Color('#f2f2f2').toString(),
+    base: () => Color('#ededed').toString(),
     light: () => Color(defaultColorTheme.light.base()).lighten(.1).toString(),
     lighter: () => Color(defaultColorTheme.light.base()).lighten(.2).toString(),
     dark: () => Color(defaultColorTheme.light.base()).darken(.1).toString(),

@@ -11,12 +11,13 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.8.4",
-    "@storybook/addons": "^5.3.12",
     "@storybook/addon-centered": "^5.3.12",
     "@storybook/addon-knobs": "^5.3.12",
     "@storybook/addon-storysource": "^5.3.12",
+    "@storybook/addons": "^5.3.12",
     "@storybook/react": "^5.3.12",
     "@storybook/theming": "^5.3.12",
+    "@types/classnames": "^2.2.9",
     "@types/color": "^3.0.1",
     "@types/node": "^13.7.0",
     "@types/react": "16.9.14",
@@ -27,8 +28,10 @@
     "tslint": "^6.0.0"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "color": "^3.1.2",
     "emotion": "^10.0.27",
+    "framer-motion": "^1.8.4",
     "react": "^16.12.0",
     "typescript": "^3.7.5",
     "unstated-next": "^1.1.0"
