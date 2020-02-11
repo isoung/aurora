@@ -1,6 +1,6 @@
 # Button Group
 
-Button groups merge child buttons into a single group.
+Button groups merge child buttons into a single combined group.
 
 ```js
 import { Button, ButtonGroup } from 'aurora';
