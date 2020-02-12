@@ -36,25 +36,34 @@ export const Button: React.FC<ButtonProps> = (props) => {
     transition:
       background-color 100ms ease-in-out;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.white.base()), .2).toString()};
     }
 
-    &:focus {
+    &:focus:not(:disabled) {
       background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.white.base()), .2).toString()};
     }
 
-    &:active {
+    &:active:not(:disabled) {
       background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.black.base()), .1).toString()};
+    }
+
+    &:disabled {
+      background-color: ${Color(colorTheme[variant].base()).fade(.6).toString()};
+      cursor: not-allowed;
     }
   `;
 
   return (
-    <motion.button {...buttonProps as any} whileTap={{ scale: .95 }} className={cx(buttonStyles, styles)}>
+    <motion.button
+      {...buttonProps as any}
+      whileTap={props.disabled ? null : { scale: .95 }}
+      className={cx(buttonStyles, styles)}
+    >
       {props.children}
     </motion.button>
   );
 };
 Button.defaultProps = {
-  variant: 'light'
+  variant: 'primary'
 };

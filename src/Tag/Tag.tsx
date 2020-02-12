@@ -1,3 +1,4 @@
+import Color from 'color';
 import { css, cx } from 'emotion';
 import React from 'react';
 
@@ -5,8 +6,14 @@ import { Button } from '../Button/Button';
 import { ComponentProps } from '../ComponentProps';
 import { Icon } from '../Icon/Icon';
 import { InteractableProps } from '../InteractableProps';
+import { ColorTheme, ColorThemeSelectionTypes } from '../Theme/Color/ColorPalette';
 import { getFontColorByBackground } from '../Theme/Color/Utils';
 import { ThemeStore } from '../Theme/ThemeStore';
+
+const getCompositeDeleteButtonColors =
+  (variant: ColorThemeSelectionTypes, colorTheme: ColorTheme): ColorThemeSelectionTypes => {
+  return Color(colorTheme[variant].base()).isLight() ? 'black' : 'white';
+};
 
 interface TagProps extends ComponentProps, InteractableProps, React.HTMLAttributes<HTMLElement> {
   isDeletable?: boolean;
@@ -56,13 +63,13 @@ export const Tag: React.FC<TagProps> = (props) => {
         {props.children}
       </span>
       {
-        isDeletable ? <Button styles={tagDeleteButtonStyles} onClick={onDelete}>
-          <Icon icon='fas fa-times' isInteractable variant='dark' interactableVariant='primary'/>
+        isDeletable ? <Button styles={tagDeleteButtonStyles} onClick={onDelete} variant={variant}>
+          <Icon icon='fas fa-times' variant={getCompositeDeleteButtonColors(variant, colorTheme)} styles={css`cursor: pointer;`}/>
         </Button> : null
       }
     </div>
   );
 };
 Tag.defaultProps = {
-  variant: 'primary'
+  variant: 'secondary'
 };

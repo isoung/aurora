@@ -1,13 +1,13 @@
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import centered from '@storybook/addon-centered/react';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
 import { Aurora } from '../Aurora';
 import { ColorThemeSelectionTypes, defaultColorTheme } from '../Theme/Color/ColorPalette';
-import { CloseButton } from './CloseButton/CloseButton';
 import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup/ButtonGroup';
+import { CloseButton } from './CloseButton/CloseButton';
 import { LightButton, LightButtonVariants } from './LightButton/LightButton';
 
 const ButtonReadme = require('./README.md');
@@ -26,10 +26,11 @@ storiesOf('Buttons', module)
   .add('basics', () => (
     <Aurora>
       <Button
-        variant={select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'light')}
+        variant={select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'primary')}
         rounded={boolean('rounded', false)}
+        disabled={boolean('disabled', false)}
       >
-        {select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'light')}
+        {select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'primary')}
       </Button>
     </Aurora>
   ))
