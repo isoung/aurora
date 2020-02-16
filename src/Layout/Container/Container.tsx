@@ -42,7 +42,7 @@ export type ContainerAlignItems =
   | 'safe center'
   | 'unsafe center';
 
-interface ContainerProps extends ComponentStyleProps, ResponsiveStyleProps, React.HTMLAttributes<HTMLElement> {
+export interface ContainerProps extends ComponentStyleProps, ResponsiveStyleProps, React.HTMLAttributes<HTMLElement> {
   position?: ContainerJustifyContent;
   direction?: ContainerFlexFlow;
   alignment?: ContainerAlignItems;

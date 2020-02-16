@@ -4,30 +4,34 @@ import { ComponentProps } from '../../ComponentProps';
 import { Icon, IconSize } from '../../Icon/Icon';
 
 interface CloseButtonProps extends ComponentProps {
-  onClose: (e: any) => void;
+  onClose: () => void;
   size?: IconSize;
+  icon?: string;
 }
 export const CloseButton: React.FC<CloseButtonProps> = (props) => {
   const {
     variant,
     styles,
     size,
-    onClose
+    onClose,
+    icon,
+    ...iconProps
   } = props;
 
   return (
     <Icon
-      onClick={onClose}
-      icon='fas fa-times-circle'
+      onInteraction={onClose}
+      icon={icon}
       size={size}
       styles={styles}
       isInteractable
       variant={variant}
       interactableVariant='black'
+      {...iconProps}
     />
   );
 };
 CloseButton.defaultProps = {
   variant: 'dark',
-  size: '2x'
+  icon: 'far fa-times'
 };

@@ -6,9 +6,12 @@ import React from 'react';
 
 import { Aurora } from '../Aurora';
 import { Button } from '../Button/Button';
+import { ColorThemeSelectionTypes, defaultColorTheme } from '../Theme/Color/ColorPalette';
 import { Container, ContainerJustifyContent } from './Container/Container';
+import { Tile } from './Tile/Tile';
 
 const LayoutReadme = require('./Container/README.md');
+const TileReadme = require('./Tile/README.md');
 
 storiesOf('Layout', module)
   .addDecorator(withKnobs)
@@ -50,6 +53,22 @@ storiesOf('Layout', module)
             ) ? <Button variant='primary'>{containerPosition}</Button> : null
           }
         </Container>
+      </Aurora>
+    );
+  })
+  .addParameters({
+    readme: {
+      sidebar: TileReadme.default
+    }
+  })
+  .add('tile basics', () => {
+    const variant = select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'primary');
+
+    return (
+      <Aurora>
+        <Tile height='200px' width='200px' variant={variant} position='center' alignment='center'>
+          {variant}
+        </Tile>
       </Aurora>
     );
   });

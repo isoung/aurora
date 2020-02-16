@@ -21,6 +21,7 @@ export const Icon: React.FC<IconProps> = (props) => {
     variant,
     styles,
     isInteractable,
+    onInteraction,
     interactableVariant,
     icon,
     size,
@@ -40,7 +41,7 @@ export const Icon: React.FC<IconProps> = (props) => {
   const iconClassname = `${iconSize} ${props.icon}`;
 
   return (
-    <i {...iconProps} className={classnames(iconClassname, cx(iconStyles, styles))}/>
+    <i {...iconProps} onClick={onInteraction} className={classnames(iconClassname, cx(iconStyles, styles))}/>
   );
 };
 Icon.defaultProps = {

@@ -27,6 +27,7 @@ export const Tag: React.FC<TagProps> = (props) => {
     variant,
     styles,
     isInteractable,
+    onInteraction,
     isDeletable,
     onDelete,
     ...tagProps
@@ -59,7 +60,7 @@ export const Tag: React.FC<TagProps> = (props) => {
 
   return (
     <div style={{ display: 'flex' }}>
-      <span {...tagProps} className={cx(tagStyles, styles)}>
+      <span {...tagProps} onClick={onInteraction} className={cx(tagStyles, styles)}>
         {props.children}
       </span>
       {

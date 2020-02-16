@@ -2,15 +2,15 @@ import Color from 'color';
 import { css, cx } from 'emotion';
 import React from 'react';
 
-import { Button, ButtonProps } from '../Button';
 import { ColorTheme } from '../../Theme/Color/ColorPalette';
 import { ThemeStore } from '../../Theme/ThemeStore';
+import { Button, ButtonProps } from '../Button';
 
 export type LightButtonVariants = Omit<ColorTheme, 'light' | 'white'>;
-interface LightButton extends Omit<ButtonProps, 'variant'> {
+interface LightButtonProps extends Omit<ButtonProps, 'variant'> {
   variant: keyof LightButtonVariants;
 }
-export const LightButton: React.FC<LightButton> = (props) => {
+export const LightButton: React.FC<LightButtonProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -20,11 +20,19 @@ export const LightButton: React.FC<LightButton> = (props) => {
   } = props;
 
   const lightButtonStyles = css`
-    color: ${colorTheme[props.variant].base()};
-    background-color: #fff;
+    color: ${colorTheme[variant].base()};
+    background-color: transparent;
 
-    &:hover {
-      background-color: ${Color(colorTheme[props.variant].base()).mix(Color('#fff'), .5).fade(.7).toString()};
+    &:hover:not(:disabled) {
+      background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.white.base()), .5).fade(.7).toString()};
+    }
+
+    &:focus:not(:disabled) {
+      background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.white.base()), .5).toString()};
+    }
+
+    &:active:not(:disabled) {
+      background-color: ${Color(colorTheme[variant].base()).mix(Color(colorTheme.black.base()), .1).toString()};
     }
   `;
 
