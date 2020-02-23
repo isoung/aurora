@@ -24,7 +24,7 @@ export const Input: React.FC<InputProps> = (props) => {
   } = props;
 
   const inputStyles = css`
-    background-color: ${colorTheme[variant].base()};
+    background-color: ${colorTheme.light.base()};
     color: ${colorTheme.black.base()};
     border: 0;
     border-bottom-left-radius: 4px;
@@ -64,5 +64,5 @@ export const Input: React.FC<InputProps> = (props) => {
   );
 };
 Input.defaultProps = {
-  variant: 'light'
+  variant: 'primary'
 };

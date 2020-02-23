@@ -27,6 +27,7 @@
     "babel-loader": "^8.0.6",
     "react-docgen-typescript-loader": "^3.6.0",
     "storybook-readme": "^5.0.8",
+    "typescript": "^3.7.5",
     "tslint": "^6.0.0"
   },
   "dependencies": {
@@ -37,7 +38,6 @@
     "framer-motion": "^1.8.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "typescript": "^3.7.5",
     "unstated-next": "^1.1.0"
   }
 }
