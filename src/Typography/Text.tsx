@@ -24,6 +24,6 @@ export const Text: React.FC<TextProps> = (props) => {
 Text.defaultProps = {
   variant: 'black',
   size: 'normal',
-  tag: 'p',
+  tag: 'span',
   weight: 400
 };

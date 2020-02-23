@@ -14,7 +14,7 @@ export const AuroraProvider: React.FC = (props) => {
   `;
 
   return (
-    <div className={auroraProviderStyles}>
+    <div className={auroraProviderStyles} id='aurora'>
       {props.children}
     </div>
   );

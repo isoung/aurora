@@ -8,7 +8,7 @@ import { Button, ButtonProps } from '../Button';
 
 export type LightButtonVariants = Omit<ColorTheme, 'light' | 'white'>;
 interface LightButtonProps extends Omit<ButtonProps, 'variant'> {
-  variant: keyof LightButtonVariants;
+  variant?: keyof LightButtonVariants;
 }
 export const LightButton: React.FC<LightButtonProps> = (props) => {
   const themeStore = ThemeStore.useContainer();

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AuroraProvider } from './AuroraProvider';
-import { ThemeStoreState, ThemeStore } from './Theme/ThemeStore';
+import { ThemeStore, ThemeStoreState } from './Theme/ThemeStore';
 
 interface AuroraProps extends ThemeStoreState {}
 export const Aurora: React.FC<AuroraProps> = (props) => {

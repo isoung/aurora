@@ -11,10 +11,10 @@ export interface FontTheme {
 
 export const defaultFontTheme: FontTheme = {
   fontFamily: 'Open Sans',
-  info: '10px',
-  small: '12px',
-  normal: '16px',
-  medium: '20px',
+  info: '8px',
+  small: '10px',
+  normal: '12px',
+  medium: '18px',
   large: '28px',
   extraLarge: '40px'
 };

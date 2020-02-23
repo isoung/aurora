@@ -34,5 +34,5 @@ export const FormFieldIcon: React.FC<FormFieldIconProps> = (props) => {
 };
 FormFieldIcon.defaultProps = {
   iconPosition: 'left',
-  variant: 'light'
+  variant: 'dark'
 };
