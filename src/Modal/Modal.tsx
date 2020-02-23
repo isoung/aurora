@@ -1,10 +1,10 @@
 import Color from 'color';
 import { css, cx } from 'emotion';
-import { motion } from 'framer-motion';
 import React from 'react';
 import { useContainer } from 'unstated-next';
 
 import { ActiveProps } from '../ActiveProps';
+import { EntranceAnimation } from '../Animation/EntranceAnimation';
 import { ComponentStyleProps } from '../ComponentProps';
 import { getPropStyle, ResponsiveStyleProps } from '../ResponsiveStyles';
 import { ThemeStore } from '../Theme/ThemeStore';
@@ -41,32 +41,16 @@ export const Modal: React.FC<ModalProps> = (props) => {
     z-index: 9998;
   `;
 
-  const container = {
-    hidden: { opacity: 0, scale: .9 },
-    visible: {
-      opacity: 1,
-      scale: 1
-    }
-  };
-
   return (
     <div>
       {
         props.active &&
         (
           <React.Fragment>
-            <motion.div
-              className={modalOverlayStyles} onClick={props.onClose}
-            />
-            <motion.div
-              variants={container}
-              initial='hidden'
-              animate='visible'
-              transition={{ duration: .3 }}
-              className={cx(modalContentStyles, props.styles)}
-            >
+            <div className={modalOverlayStyles} onClick={props.onClose}/>
+            <EntranceAnimation transitionDuration={.3} styles={cx(modalContentStyles, props.styles)}>
               {props.children}
-            </motion.div>
+            </EntranceAnimation>
           </React.Fragment>
         )
       }

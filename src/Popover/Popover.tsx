@@ -1,9 +1,9 @@
 import { css, cx } from 'emotion';
-import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import DOM from 'react-dom';
 
 import { ActiveProps } from '../ActiveProps';
+import { EntranceAnimation } from '../Animation/EntranceAnimation';
 import { ComponentStyleProps } from '../ComponentProps';
 import { ThemeStore } from '../Theme/ThemeStore';
 
@@ -17,17 +17,6 @@ interface DOMRect {
   bottom: number;
   left: number;
 }
-
-const animationVariants = {
-  hidden: { opacity: 0, scale: 0 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay: 0.05
-    }
-  }
-};
 
 export interface PopoverProps extends ActiveProps, ComponentStyleProps {
   content?: JSX.Element;
@@ -134,14 +123,13 @@ export const Popover: React.FC<PopoverProps> = (props) => {
                 colorTheme: themeStore.getColorTheme(),
                 fontTheme: themeStore.getFontTheme()
               }}>
-                <motion.div
-                  variants={animationVariants}
-                  initial='hidden'
-                  animate='visible'
-                  className={cx(popoverStyles, props.styles)}
+                <EntranceAnimation
+                  hiddenScale={.9}
+                  visibleDelay={.05}
+                  styles={cx(popoverStyles, props.styles)}
                 >
                   {props.content}
-                </motion.div>
+                </EntranceAnimation>
               </ThemeStore.Provider>
             ) : null
           ),
