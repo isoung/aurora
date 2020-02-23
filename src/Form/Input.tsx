@@ -26,7 +26,7 @@ export const Input: React.FC<InputProps> = (props) => {
   const inputStyles = css`
     background-color: ${colorTheme.light.base()};
     color: ${colorTheme.black.base()};
-    border: 0;
+    border: 1px solid transparent;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
     border-bottom-right-radius: ${hasAddonRight ? '0px' : '4px'};
@@ -39,7 +39,7 @@ export const Input: React.FC<InputProps> = (props) => {
     font-size: 16px;
     transition:
       border-color 50ms ease-in-out,
-      box-shadow 150ms ease-in-out;
+      box-shadow 100ms ease-in-out;
 
     &::placeholder {
       color: ${colorTheme.dark.base()};
