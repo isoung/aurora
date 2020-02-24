@@ -29,7 +29,8 @@ storiesOf('Tooltip', module)
           <div>
             <Title size='medium' variant='white' styles={css`margin: 0;`}>Tooltip</Title>
             <Text tag='span' variant='white'>
-              Apparently
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
             </Text>
           </div>
         }>
