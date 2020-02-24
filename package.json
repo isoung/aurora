@@ -23,12 +23,13 @@
     "@types/node": "^13.7.0",
     "@types/react": "16.9.14",
     "@types/react-dom": "^16.9.5",
+    "@types/uuid": "^3.4.7",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "react-docgen-typescript-loader": "^3.6.0",
     "storybook-readme": "^5.0.8",
-    "typescript": "^3.7.5",
-    "tslint": "^6.0.0"
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -38,6 +39,7 @@
     "framer-motion": "^1.8.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "unstated-next": "^1.1.0"
+    "unstated-next": "^1.1.0",
+    "uuid": "^3.4.0"
   }
 }

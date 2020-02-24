@@ -13,8 +13,8 @@ function useThemeStore(initialState: ThemeStoreState = {
   colorTheme: defaultColorTheme,
   fontTheme: defaultFontTheme
 }) {
-  const [ colorTheme, setColorThemeState ] = useState({...defaultColorTheme, ...initialState.colorTheme});
-  const [ fontTheme, setFontThemeState ] = useState({...defaultFontTheme, ...initialState.fontTheme});
+  const [colorTheme, setColorThemeState] = useState({...defaultColorTheme, ...initialState.colorTheme});
+  const [fontTheme, setFontThemeState] = useState({...defaultFontTheme, ...initialState.fontTheme});
 
   const getColorTheme = () => colorTheme;
   const setColorTheme = (theme: ColorTheme): void => setColorThemeState({ ...colorTheme, ...theme });
