@@ -31,13 +31,13 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
 
   const generateTopStyles = () => {
     if (position === 'top') {
-      return 'calc(100% - 8px)';
+      return '100%';
     }
     else if (position === 'right') {
       return `${top}px`;
     }
     else if (position === 'bottom') {
-      return '-2px';
+      return '-10px';
     }
     else if (position === 'left') {
       return `${top}px`;
@@ -49,13 +49,13 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
       return `${left}px`;
     }
     else if (position === 'right') {
-      return '-2px';
+      return '-10px';
     }
     else if (position === 'bottom') {
       return `${left}px`;
     }
     else if (position === 'left') {
-      return 'calc(100% - 8px)';
+      return '100%';
     }
   };
 
@@ -79,11 +79,6 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
     color: ${getFontColorByBackground(variant, colorTheme)};
     padding: 14px;
     border-radius: 4px;
-    margin-bottom: ${position === 'top' ? '8px' : undefined};
-    margin-top: ${position === 'bottom' ? '8px' : undefined};
-    margin-left: ${position === 'right' ? '8px' : undefined};
-    margin-right: ${position === 'left' ? '8px' : undefined};
-    width: 300px;
 
     &:after {
       content: " ";

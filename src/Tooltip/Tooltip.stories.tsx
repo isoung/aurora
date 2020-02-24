@@ -26,7 +26,7 @@ storiesOf('Tooltip', module)
     return (
       <Aurora>
         <Tooltip active={active} variant='info' content={
-          <div>
+          <div className={css`width: 300px;`}>
             <Title size='medium' variant='white' styles={css`margin: 0;`}>Tooltip</Title>
             <Text tag='span' variant='white'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,

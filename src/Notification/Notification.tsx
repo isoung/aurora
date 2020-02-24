@@ -1,6 +1,7 @@
 import { css, cx } from 'emotion';
 import React, { useEffect } from 'react';
 
+import { EntranceAnimation } from '../Animation/EntranceAnimation';
 import { CloseButton } from '../Button/CloseButton/CloseButton';
 import { ComponentProps } from '../ComponentProps';
 import { Container } from '../Layout/Container/Container';
@@ -68,19 +69,21 @@ export const Notification: React.FC<NotificationProps> = (props) => {
   `;
 
   return (
-    <Container styles={cx(notificationStyles, props.styles)}>
-      <Container styles={contentContainerStyles}>
-        {props.text}
+    <EntranceAnimation>
+      <Container styles={cx(notificationStyles, props.styles)}>
+        <Container styles={contentContainerStyles}>
+          {props.text}
+        </Container>
+        <Container position='center' alignment='center' styles={commandContainerStyles}>
+          <div className={commandStyles} onClick={() => notificationStore.removeNotification(props.id)}>
+            <Container position='center'>
+              <CloseButton styles={closeButtonStyles} variant='danger' onClose={() => null}/>
+            </Container>
+            <Text>Close</Text>
+          </div>
+        </Container>
       </Container>
-      <Container position='center' alignment='center' styles={commandContainerStyles}>
-        <div className={commandStyles} onClick={() => notificationStore.removeNotification(props.id)}>
-          <Container position='center'>
-            <CloseButton styles={closeButtonStyles} variant='danger' onClose={() => null}/>
-          </Container>
-          <Text>Close</Text>
-        </div>
-      </Container>
-    </Container>
+    </EntranceAnimation>
   );
 };
 Notification.defaultProps = {

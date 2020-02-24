@@ -107,6 +107,10 @@ export const Popover: React.FC<PopoverProps> = (props) => {
     top: ${generateTopStyles()};
     right: ${generateRightStyles()};
     bottom: ${generateBottomStyles()};
+    margin-bottom: ${props.position === 'top' ? '8px' : undefined};
+    margin-top: ${props.position === 'bottom' ? '8px' : undefined};
+    margin-left: ${props.position === 'right' ? '8px' : undefined};
+    margin-right: ${props.position === 'left' ? '8px' : undefined};
     display: flex;
   `;
 
