@@ -9,6 +9,8 @@ import { ThemeStore } from '../Theme/ThemeStore';
 import { Text } from '../Typography/Text';
 import { NotificationStore } from './NotificationStore';
 
+// TODO: Add support for additional content in notifications e.g. media content
+
 interface NotificationProps extends ComponentProps {
   id: string;
   text: string;

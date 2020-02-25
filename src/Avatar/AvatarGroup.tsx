@@ -17,9 +17,6 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = (props) => {
       border-style: solid;
     }
 
-    img:first-of-type {
-    }
-
     img:nth-child(2) {
       left: -12px;
     }
