@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test:lint",
+    "test:lint": "tslint -c tslint.json -t verbose 'src/**/*.ts' src/**/*.tsx",
+    "build": "tsc -p tsconfig.dist.json",
     "start": "start-storybook -p 9557"
   },
   "author": "Isaiah Soung",
