@@ -1,12 +1,13 @@
 {
   "name": "aurora",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "npm run test:lint",
     "test:lint": "tslint -c tslint.json -t verbose 'src/**/*.ts' src/**/*.tsx",
-    "build": "tsc -p tsconfig.dist.json",
+    "build": "rm -rf dist && tsc -p tsconfig.dist.json",
     "start": "start-storybook -p 9557"
   },
   "author": "Isaiah Soung",

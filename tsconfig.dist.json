@@ -23,10 +23,9 @@
     "strictNullChecks": false,
     "target": "ES5"
   },
-  "exclude": ["node_modules", "build", "scripts", "src/Tests"],
+  "exclude": ["node_modules", "build", "scripts", "src/**/*.stories.*"],
   "include": [
-    "./src/index.ts",
-    "./src/Components/*.ts",
-    "./src/Components/*.tsx"
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
   ]
 }
