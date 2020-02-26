@@ -19,8 +19,8 @@ export const FormFieldIcon: React.FC<FormFieldIconProps> = (props) => {
     position: absolute;
     left: ${iconPosition === 'left' ? 0 : undefined};
     right: ${iconPosition === 'right' ? 0 : undefined};
-    height: 2.5em;
-    width: 2.5em;
+    height: 3em;
+    width: 3em;
     display: inline-flex;
     justify-content: center;
     align-items: center;

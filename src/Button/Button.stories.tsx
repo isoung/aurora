@@ -1,7 +1,7 @@
 import centered from '@storybook/addon-centered/react';
 import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Aurora } from '../Aurora';
 import { ColorThemeSelectionTypes, defaultColorTheme } from '../Theme/Color/ColorPalette';
@@ -9,6 +9,7 @@ import { Button } from './Button';
 import { ButtonGroup } from './ButtonGroup/ButtonGroup';
 import { CloseButton } from './CloseButton/CloseButton';
 import { LightButton, LightButtonVariants } from './LightButton/LightButton';
+import { RadioButton } from './RadioButton/RadioButton';
 
 const ButtonReadme = require('./README.md');
 const CloseButtonReadme = require('./CloseButton/README.md');
@@ -84,4 +85,19 @@ storiesOf('Buttons', module)
     <Aurora>
       <CloseButton onClose={() => alert('Close button clicked')}/>
     </Aurora>
-  ));
+  ))
+  .add('radio button', () => {
+    const [selected, setSelected] = useState(false);
+
+    return (
+      <Aurora>
+        <RadioButton
+          selected={selected}
+          variant={select('variant', Object.keys(defaultColorTheme) as ColorThemeSelectionTypes[], 'primary')}
+          onSelected={() => setSelected(!selected)}
+        >
+          Click to select me!
+        </RadioButton>
+      </Aurora>
+    );
+  });
