@@ -6,9 +6,12 @@ import { EntranceAnimation } from '../../Animation/EntranceAnimation';
 import { ComponentProps } from '../../ComponentProps';
 import { Container } from '../../Layout/Container/Container';
 import { SelectionProps } from '../../SelectionProps';
+import { ColorThemeSelectionTypes } from '../../Theme/Color/ColorPalette';
 import { ThemeStore } from '../../Theme/ThemeStore';
 
-interface RadioButton extends ComponentProps, SelectionProps {}
+interface RadioButton extends ComponentProps, SelectionProps {
+  innerColor?: ColorThemeSelectionTypes;
+}
 export const RadioButton: React.FC<RadioButton> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
@@ -19,14 +22,14 @@ export const RadioButton: React.FC<RadioButton> = (props) => {
     border-radius: 32px;
 
     &:hover {
-      background-color: ${Color(colorTheme[props.variant].lighter()).fade(.8).toString()};
+      background-color: ${Color(colorTheme[props.variant].light()).fade(.6).toString()};
     }
   `;
   const radioButtonStyles = css`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: ${props.selected ? colorTheme[props.variant].lighter() : colorTheme.primary.darker()};
+    background-color: ${props.selected ? colorTheme[props.variant].light() : colorTheme[props.innerColor].base()};
     box-shadow: inset 0 1px 2px ${colorTheme.black.base()};
 
     transition: background-color 100ms ease-in-out;
@@ -36,7 +39,7 @@ export const RadioButton: React.FC<RadioButton> = (props) => {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: ${colorTheme.light.lighter()};
+    background-color: ${colorTheme.light.light()};
     box-shadow: inset 0 1px 4px ${colorTheme.light.darker()};
   `;
 
@@ -78,5 +81,6 @@ export const RadioButton: React.FC<RadioButton> = (props) => {
   );
 };
 RadioButton.defaultProps = {
-  variant: 'primary'
+  variant: 'primary',
+  innerColor: 'white'
 };

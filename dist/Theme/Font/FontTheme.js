@@ -5,8 +5,8 @@ exports.defaultFontTheme = {
     info: '8px',
     small: '10px',
     normal: '12px',
-    medium: '18px',
-    large: '28px',
-    extraLarge: '40px'
+    medium: '15px',
+    large: '20px',
+    extraLarge: '32px'
 };
 //# sourceMappingURL=FontTheme.js.map
