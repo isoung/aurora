@@ -20,7 +20,17 @@ function useThemeStore(initialState) {
         colorTheme: ColorPalette_1.defaultColorTheme,
         fontTheme: FontTheme_1.defaultFontTheme
     }; }
-    var _a = react_1.useState(__assign(__assign({}, ColorPalette_1.defaultColorTheme), initialState.colorTheme)), colorTheme = _a[0], setColorThemeState = _a[1];
+    var _a = react_1.useState({
+        primary: __assign(__assign({}, ColorPalette_1.defaultColorTheme.primary), initialState.colorTheme.primary),
+        secondary: __assign(__assign({}, ColorPalette_1.defaultColorTheme.secondary), initialState.colorTheme.secondary),
+        danger: __assign(__assign({}, ColorPalette_1.defaultColorTheme.danger), initialState.colorTheme.danger),
+        success: __assign(__assign({}, ColorPalette_1.defaultColorTheme.success), initialState.colorTheme.success),
+        info: __assign(__assign({}, ColorPalette_1.defaultColorTheme.info), initialState.colorTheme.info),
+        dark: __assign(__assign({}, ColorPalette_1.defaultColorTheme.dark), initialState.colorTheme.dark),
+        light: __assign(__assign({}, ColorPalette_1.defaultColorTheme.light), initialState.colorTheme.light),
+        white: __assign(__assign({}, ColorPalette_1.defaultColorTheme.white), initialState.colorTheme.white),
+        black: __assign(__assign({}, ColorPalette_1.defaultColorTheme.black), initialState.colorTheme.black)
+    }), colorTheme = _a[0], setColorThemeState = _a[1];
     var _b = react_1.useState(__assign(__assign({}, FontTheme_1.defaultFontTheme), initialState.fontTheme)), fontTheme = _b[0], setFontThemeState = _b[1];
     var getColorTheme = function () { return colorTheme; };
     var setColorTheme = function (theme) { return setColorThemeState(__assign(__assign({}, colorTheme), theme)); };
