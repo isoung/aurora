@@ -5,7 +5,7 @@ import { ComponentTextProps } from '../ComponentProps';
 import { Text } from './Text';
 
 interface SubtitleProps extends ComponentTextProps {}
-export const Subtitle: React.FC<SubtitleProps> = (props) => {
+const Subtitle: React.FC<SubtitleProps> = (props) => {
   const {
     styles,
     ...subtitleProps

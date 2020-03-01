@@ -32,12 +32,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Text_1 = require("./Text");
-exports.Subtitle = function (props) {
+var Subtitle = function (props) {
     var styles = props.styles, subtitleProps = __rest(props, ["styles"]);
     var subtitleStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject([""], [""])));
     return (react_1.default.createElement(Text_1.Text, __assign({ tag: 'h4', styles: emotion_1.cx(subtitleStyles, styles) }, subtitleProps), props.children));
 };
-exports.Subtitle.defaultProps = {
+exports.Subtitle = Subtitle;
+Subtitle.defaultProps = {
     size: 'normal',
     weight: 300
 };
