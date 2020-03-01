@@ -10,7 +10,7 @@ import { getPropStyle, ResponsiveStyleProps } from '../ResponsiveStyles';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 export interface ModalProps extends ComponentStyleProps, ActiveProps, ResponsiveStyleProps {}
-export const Modal: React.FC<ModalProps> = (props) => {
+const Modal: React.FC<ModalProps> = (props) => {
   const themeStore = useContainer(ThemeStore);
   const colorTheme = themeStore.getColorTheme();
 
@@ -56,4 +56,8 @@ export const Modal: React.FC<ModalProps> = (props) => {
       }
     </div>
   );
+};
+
+export {
+  Modal
 };

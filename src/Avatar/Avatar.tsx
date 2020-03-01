@@ -12,7 +12,7 @@ interface AvatarProps extends
   React.HtmlHTMLAttributes<HTMLImageElement> {
   rounded?: boolean;
 }
-export const Avatar: React.FC<AvatarProps> = (props) => {
+const Avatar: React.FC<AvatarProps> = (props) => {
   const {
     styles,
     imgUrl,
@@ -43,4 +43,8 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
 Avatar.defaultProps = {
   height: '48px',
   width: '48px'
+};
+
+export {
+  Avatar
 };

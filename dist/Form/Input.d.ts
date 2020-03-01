@@ -5,5 +5,5 @@ interface InputProps extends ComponentProps, React.HTMLAttributes<HTMLInputEleme
     hasIconRight?: boolean;
     hasAddonRight?: boolean;
 }
-export declare const Input: React.FC<InputProps>;
-export {};
+declare const Input: React.FC<InputProps>;
+export { Input };

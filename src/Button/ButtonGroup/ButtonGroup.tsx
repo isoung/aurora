@@ -6,7 +6,7 @@ import { ComponentStyleProps } from '../../ComponentProps';
 interface ButtonGroupProps extends ComponentStyleProps {
   rounded?: boolean;
 }
-export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
+const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
   const buttonGroupStyles = css`
     button:first-of-type {
       border-top-left-radius: ${props.rounded ? '100px' : undefined};
@@ -32,4 +32,8 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = (props) => {
       {props.children}
     </div>
   );
+};
+
+export {
+  ButtonGroup
 };

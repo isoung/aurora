@@ -34,14 +34,15 @@ var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var ThemeStore_1 = require("../../Theme/ThemeStore");
 var Button_1 = require("../Button");
-exports.LightButton = function (props) {
+var LightButton = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var variant = props.variant, buttonProps = __rest(props, ["variant"]);
     var lightButtonStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    color: ", ";\n    background-color: transparent;\n\n    &:hover:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:focus:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:active:not(:disabled) {\n      background-color: ", ";\n    }\n  "], ["\n    color: ", ";\n    background-color: transparent;\n\n    &:hover:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:focus:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:active:not(:disabled) {\n      background-color: ", ";\n    }\n  "])), colorTheme[variant].base(), color_1.default(colorTheme[variant].base()).mix(color_1.default(colorTheme.white.base()), .5).fade(.7).toString(), color_1.default(colorTheme[variant].base()).mix(color_1.default(colorTheme.white.base()), .5).toString(), color_1.default(colorTheme[variant].base()).mix(color_1.default(colorTheme.black.base()), .1).toString());
     return (react_1.default.createElement(Button_1.Button, __assign({}, buttonProps, { styles: emotion_1.cx(lightButtonStyles, props.styles) }), props.children));
 };
-exports.LightButton.defaultProps = {
+exports.LightButton = LightButton;
+LightButton.defaultProps = {
     variant: 'primary'
 };
 var templateObject_1;

@@ -4,5 +4,5 @@ import { IconProps } from '../Icon/Icon';
 interface FormFieldIconProps extends ComponentProps, IconProps {
     iconPosition?: 'left' | 'right';
 }
-export declare const FormFieldIcon: React.FC<FormFieldIconProps>;
-export {};
+declare const FormFieldIcon: React.FC<FormFieldIconProps>;
+export { FormFieldIcon };

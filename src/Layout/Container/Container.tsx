@@ -47,7 +47,7 @@ export interface ContainerProps extends ComponentStyleProps, ResponsiveStyleProp
   direction?: ContainerFlexFlow;
   alignment?: ContainerAlignItems;
 }
-export const Container: React.FC<ContainerProps> = (props) => {
+const Container: React.FC<ContainerProps> = (props) => {
   const {
     styles,
     width,
@@ -72,4 +72,8 @@ export const Container: React.FC<ContainerProps> = (props) => {
       {props.children}
     </div>
   );
+};
+
+export {
+  Container
 };

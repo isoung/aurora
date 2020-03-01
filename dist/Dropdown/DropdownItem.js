@@ -11,7 +11,7 @@ var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Container_1 = require("../Layout/Container/Container");
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.DropdownItem = function (props) {
+var DropdownItem = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var dropdownItemStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    background-color: ", ";\n    padding: .5em 2rem .5rem 2rem;\n\n    &:not(:hover) {\n      * {\n        color: ", ";\n      }\n    }\n\n    &:hover {\n      background-color: ", ";\n    }\n  "], ["\n    background-color: ", ";\n    padding: .5em 2rem .5rem 2rem;\n\n    &:not(:hover) {\n      * {\n        color: ", ";\n      }\n    }\n\n    &:hover {\n      background-color: ", ";\n    }\n  "])), props.selected === true ? colorTheme.primary.base() : colorTheme.white.base(), props.selected ? colorTheme.white.base() : null, props.hoverable === true ? colorTheme.light.base() : null);
@@ -22,7 +22,8 @@ exports.DropdownItem = function (props) {
     };
     return (react_1.default.createElement(Container_1.Container, { styles: emotion_1.cx(dropdownItemStyles, props.styles), onClick: dropdownItemOnClick }, props.children));
 };
-exports.DropdownItem.defaultProps = {
+exports.DropdownItem = DropdownItem;
+DropdownItem.defaultProps = {
     selected: false,
     hoverable: false
 };

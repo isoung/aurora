@@ -8,7 +8,7 @@ interface TextProps extends ComponentTextProps {
   tag?: string;
   weight?: number;
 }
-export const Text: React.FC<TextProps> = (props) => {
+const Text: React.FC<TextProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
   const fontTheme = themeStore.getFontTheme();
@@ -26,4 +26,8 @@ Text.defaultProps = {
   size: 'normal',
   tag: 'span',
   weight: 400
+};
+
+export {
+  Text
 };

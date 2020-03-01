@@ -3,5 +3,5 @@ declare type NotificationProviderPosition = 'top-left' | 'top-center' | 'top-rig
 interface NotificationProviderProps {
     position?: NotificationProviderPosition;
 }
-export declare const NotificationProvider: React.FC<NotificationProviderProps>;
-export {};
+declare const NotificationProvider: React.FC<NotificationProviderProps>;
+export { NotificationProvider };

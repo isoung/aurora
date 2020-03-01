@@ -5,5 +5,5 @@ interface NotificationProps extends ComponentProps {
     text: string;
     duration?: number;
 }
-export declare const Notification: React.FC<NotificationProps>;
-export {};
+declare const Notification: React.FC<NotificationProps>;
+export { Notification };

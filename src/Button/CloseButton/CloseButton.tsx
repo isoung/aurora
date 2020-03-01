@@ -8,7 +8,7 @@ interface CloseButtonProps extends ComponentProps {
   size?: IconSize;
   icon?: string;
 }
-export const CloseButton: React.FC<CloseButtonProps> = (props) => {
+const CloseButton: React.FC<CloseButtonProps> = (props) => {
   const {
     variant,
     styles,
@@ -34,4 +34,7 @@ export const CloseButton: React.FC<CloseButtonProps> = (props) => {
 CloseButton.defaultProps = {
   variant: 'dark',
   icon: 'far fa-times'
+};
+export {
+  CloseButton
 };

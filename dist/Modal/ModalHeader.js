@@ -33,7 +33,7 @@ var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var CloseButton_1 = require("../Button/CloseButton/CloseButton");
 var Container_1 = require("../Layout/Container/Container");
-exports.ModalHeader = function (props) {
+var ModalHeader = function (props) {
     var modalHeaderContainerStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    padding-left: 2rem;\n    padding-right: 1rem;\n    padding-top: .5rem;\n    padding-bottom: .75rem;\n  "], ["\n    padding-left: 2rem;\n    padding-right: 1rem;\n    padding-top: .5rem;\n    padding-bottom: .75rem;\n  "])));
     var modalHeaderContentStyles = emotion_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    flex-grow: 1;\n  "], ["\n    flex-grow: 1;\n  "])));
     var styles = props.styles, isInteractable = props.isInteractable, onInteraction = props.onInteraction, interactionIcon = props.interactionIcon, containerProps = __rest(props, ["styles", "isInteractable", "onInteraction", "interactionIcon"]);
@@ -41,7 +41,8 @@ exports.ModalHeader = function (props) {
         react_1.default.createElement(Container_1.Container, __assign({}, containerProps, { styles: modalHeaderContentStyles }), props.children),
         isInteractable && react_1.default.createElement(CloseButton_1.CloseButton, { size: '2x', onClose: onInteraction, icon: interactionIcon })));
 };
-exports.ModalHeader.defaultProps = {
+exports.ModalHeader = ModalHeader;
+ModalHeader.defaultProps = {
     interactionIcon: 'far fa-times'
 };
 var templateObject_1, templateObject_2;

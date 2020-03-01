@@ -10,7 +10,7 @@ interface EntranceAnimationProps extends AnimationProps, ComponentStyleProps{
   visibleOpacity?: number;
   visibleScale?: number;
 }
-export const EntranceAnimation: React.FC<EntranceAnimationProps> = (props) => {
+const EntranceAnimation: React.FC<EntranceAnimationProps> = (props) => {
   const {
     hiddenOpacity,
     hiddenScale,
@@ -51,4 +51,8 @@ EntranceAnimation.defaultProps = {
   visibleScale: 1,
   visibleDelay: 0,
   transitionDuration: undefined
+};
+
+export {
+  EntranceAnimation
 };

@@ -3,5 +3,5 @@ import { ComponentStyleProps } from '../ComponentProps';
 import { PopoverProps } from '../Popover/Popover';
 interface DropdownProps extends ComponentStyleProps, PopoverProps {
 }
-export declare const Dropdown: React.FC<DropdownProps>;
-export {};
+declare const Dropdown: React.FC<DropdownProps>;
+export { Dropdown };

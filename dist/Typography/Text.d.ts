@@ -4,5 +4,5 @@ interface TextProps extends ComponentTextProps {
     tag?: string;
     weight?: number;
 }
-export declare const Text: React.FC<TextProps>;
-export {};
+declare const Text: React.FC<TextProps>;
+export { Text };

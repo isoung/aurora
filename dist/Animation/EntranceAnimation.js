@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var framer_motion_1 = require("framer-motion");
 var react_1 = __importDefault(require("react"));
-exports.EntranceAnimation = function (props) {
+var EntranceAnimation = function (props) {
     var hiddenOpacity = props.hiddenOpacity, hiddenScale = props.hiddenScale, visibleOpacity = props.visibleOpacity, visibleScale = props.visibleScale, visibleDelay = props.visibleDelay, transitionDuration = props.transitionDuration;
     var variants = {
         hidden: {
@@ -25,7 +25,8 @@ exports.EntranceAnimation = function (props) {
     };
     return (react_1.default.createElement(framer_motion_1.motion.div, { className: props.styles, variants: variants, transition: transition, initial: 'hidden', animate: 'visible' }, props.children));
 };
-exports.EntranceAnimation.defaultProps = {
+exports.EntranceAnimation = EntranceAnimation;
+EntranceAnimation.defaultProps = {
     hiddenOpacity: 0,
     hiddenScale: 0,
     visibleOpacity: 1,

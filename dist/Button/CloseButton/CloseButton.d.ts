@@ -6,5 +6,5 @@ interface CloseButtonProps extends ComponentProps {
     size?: IconSize;
     icon?: string;
 }
-export declare const CloseButton: React.FC<CloseButtonProps>;
-export {};
+declare const CloseButton: React.FC<CloseButtonProps>;
+export { CloseButton };

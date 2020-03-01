@@ -5,7 +5,7 @@ import { NotificationStore } from './Notification/NotificationStore';
 import { ThemeStore, ThemeStoreState } from './Theme/ThemeStore';
 
 interface AuroraProps extends ThemeStoreState {}
-export const Aurora: React.FC<AuroraProps> = (props) => {
+const Aurora: React.FC<AuroraProps> = (props) => {
   const initialTheme: ThemeStoreState = {
     colorTheme: props.colorTheme ? props.colorTheme : {},
     fontTheme: props.fontTheme ? props.fontTheme : {}
@@ -20,4 +20,8 @@ export const Aurora: React.FC<AuroraProps> = (props) => {
       </NotificationStore.Provider>
     </ThemeStore.Provider>
   );
+};
+
+export {
+  Aurora
 };

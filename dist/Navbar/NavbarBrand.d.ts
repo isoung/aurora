@@ -3,5 +3,5 @@ import { ComponentStyleProps } from '../ComponentProps';
 import { ContainerProps } from '../Layout/Container/Container';
 interface NavbarBrandProps extends ComponentStyleProps, ContainerProps {
 }
-export declare const NavbarBrand: React.FC<NavbarBrandProps>;
-export {};
+declare const NavbarBrand: React.FC<NavbarBrandProps>;
+export { NavbarBrand };

@@ -10,7 +10,7 @@ interface InputProps extends ComponentProps, React.HTMLAttributes<HTMLInputEleme
   hasIconRight?: boolean;
   hasAddonRight?: boolean;
 }
-export const Input: React.FC<InputProps> = (props) => {
+const Input: React.FC<InputProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -65,4 +65,8 @@ export const Input: React.FC<InputProps> = (props) => {
 };
 Input.defaultProps = {
   variant: 'primary'
+};
+
+export {
+  Input
 };

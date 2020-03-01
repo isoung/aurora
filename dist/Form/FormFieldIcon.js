@@ -32,13 +32,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Icon_1 = require("../Icon/Icon");
-exports.FormFieldIcon = function (props) {
+var FormFieldIcon = function (props) {
     var variant = props.variant, styles = props.styles, iconPosition = props.iconPosition, iconProps = __rest(props, ["variant", "styles", "iconPosition"]);
     var formFieldIconStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    position: absolute;\n    left: ", ";\n    right: ", ";\n    height: 3em;\n    width: 3em;\n    display: inline-flex;\n    justify-content: center;\n    align-items: center;\n  "], ["\n    position: absolute;\n    left: ", ";\n    right: ", ";\n    height: 3em;\n    width: 3em;\n    display: inline-flex;\n    justify-content: center;\n    align-items: center;\n  "])), iconPosition === 'left' ? 0 : undefined, iconPosition === 'right' ? 0 : undefined);
     return (react_1.default.createElement("span", { className: emotion_1.cx(formFieldIconStyles, styles) },
         react_1.default.createElement(Icon_1.Icon, __assign({}, iconProps, { variant: variant }))));
 };
-exports.FormFieldIcon.defaultProps = {
+exports.FormFieldIcon = FormFieldIcon;
+FormFieldIcon.defaultProps = {
     iconPosition: 'left',
     variant: 'dark'
 };

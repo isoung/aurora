@@ -33,7 +33,7 @@ var classnames_1 = __importDefault(require("classnames"));
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.Icon = function (props) {
+var Icon = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var variant = props.variant, styles = props.styles, isInteractable = props.isInteractable, onInteraction = props.onInteraction, interactableVariant = props.interactableVariant, icon = props.icon, size = props.size, iconProps = __rest(props, ["variant", "styles", "isInteractable", "onInteraction", "interactableVariant", "icon", "size"]);
@@ -42,7 +42,8 @@ exports.Icon = function (props) {
     var iconClassname = iconSize + " " + props.icon;
     return (react_1.default.createElement("i", __assign({}, iconProps, { onClick: onInteraction, className: classnames_1.default(iconClassname, emotion_1.cx(iconStyles, styles)) })));
 };
-exports.Icon.defaultProps = {
+exports.Icon = Icon;
+Icon.defaultProps = {
     variant: 'primary',
     isInteractable: false,
     interactableVariant: 'secondary'

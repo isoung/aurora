@@ -13,7 +13,7 @@ export interface IconProps extends ComponentProps, InteractableProps, React.HTML
   size?: IconSize;
   interactableVariant?: ColorThemeSelectionTypes;
 }
-export const Icon: React.FC<IconProps> = (props) => {
+const Icon: React.FC<IconProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -48,4 +48,8 @@ Icon.defaultProps = {
   variant: 'primary',
   isInteractable: false,
   interactableVariant: 'secondary'
+};
+
+export {
+  Icon
 };

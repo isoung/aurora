@@ -8,4 +8,5 @@ export interface IconProps extends ComponentProps, InteractableProps, React.HTML
     size?: IconSize;
     interactableVariant?: ColorThemeSelectionTypes;
 }
-export declare const Icon: React.FC<IconProps>;
+declare const Icon: React.FC<IconProps>;
+export { Icon };

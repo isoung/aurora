@@ -14,7 +14,7 @@ var unstated_next_1 = require("unstated-next");
 var EntranceAnimation_1 = require("../Animation/EntranceAnimation");
 var ResponsiveStyles_1 = require("../ResponsiveStyles");
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.Modal = function (props) {
+var Modal = function (props) {
     var themeStore = unstated_next_1.useContainer(ThemeStore_1.ThemeStore);
     var colorTheme = themeStore.getColorTheme();
     var modalContentStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    width: fit-content;\n    height: fit-content;\n    margin: auto;\n    background-color: ", ";\n    border-radius: 6px;\n    z-index: 9999;\n\n    ", "\n  "], ["\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    width: fit-content;\n    height: fit-content;\n    margin: auto;\n    background-color: ", ";\n    border-radius: 6px;\n    z-index: 9999;\n\n    ", "\n  "])), colorTheme.white.base(), ResponsiveStyles_1.getPropStyle(props));
@@ -24,5 +24,6 @@ exports.Modal = function (props) {
             react_1.default.createElement("div", { className: modalOverlayStyles, onClick: props.onClose }),
             react_1.default.createElement(EntranceAnimation_1.EntranceAnimation, { transitionDuration: .3, styles: emotion_1.cx(modalContentStyles, props.styles) }, props.children)))));
 };
+exports.Modal = Modal;
 var templateObject_1, templateObject_2;
 //# sourceMappingURL=Modal.js.map

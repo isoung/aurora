@@ -5,5 +5,5 @@ interface DropdownItemProps extends ComponentStyleProps {
     onSelection?: () => void;
     hoverable?: boolean;
 }
-export declare const DropdownItem: React.FC<DropdownItemProps>;
-export {};
+declare const DropdownItem: React.FC<DropdownItemProps>;
+export { DropdownItem };

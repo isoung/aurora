@@ -3,5 +3,5 @@ import { ComponentStyleProps } from '../ComponentProps';
 import { ContainerProps } from '../Layout/Container/Container';
 interface NavbarContentProps extends ComponentStyleProps, ContainerProps {
 }
-export declare const NavbarContent: React.FC<NavbarContentProps>;
-export {};
+declare const NavbarContent: React.FC<NavbarContentProps>;
+export { NavbarContent };

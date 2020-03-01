@@ -21,3 +21,7 @@ Subtitle.defaultProps = {
   size: 'normal',
   weight: 300
 };
+
+export {
+  Subtitle
+};

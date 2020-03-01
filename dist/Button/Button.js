@@ -36,14 +36,15 @@ var react_1 = __importDefault(require("react"));
 var unstated_next_1 = require("unstated-next");
 var Utils_1 = require("../Theme/Color/Utils");
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.Button = function (props) {
+var Button = function (props) {
     var themeStore = unstated_next_1.useContainer(ThemeStore_1.ThemeStore);
     var colorTheme = themeStore.getColorTheme();
     var variant = props.variant, styles = props.styles, rounded = props.rounded, buttonProps = __rest(props, ["variant", "styles", "rounded"]);
     var buttonStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    cursor: pointer;\n    background-color: ", ";\n    color: ", ";\n    border: transparent;\n    padding-top: 8px;\n    padding-bottom: 8px;\n    padding-left: 16px;\n    padding-right: 16px;\n    border-radius: ", ";\n    outline: none;\n    transition:\n      background-color 100ms ease-in-out;\n\n    &:hover:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:focus:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:active:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:disabled {\n      background-color: ", ";\n      cursor: not-allowed;\n    }\n  "], ["\n    cursor: pointer;\n    background-color: ", ";\n    color: ", ";\n    border: transparent;\n    padding-top: 8px;\n    padding-bottom: 8px;\n    padding-left: 16px;\n    padding-right: 16px;\n    border-radius: ", ";\n    outline: none;\n    transition:\n      background-color 100ms ease-in-out;\n\n    &:hover:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:focus:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:active:not(:disabled) {\n      background-color: ", ";\n    }\n\n    &:disabled {\n      background-color: ", ";\n      cursor: not-allowed;\n    }\n  "])), colorTheme[variant].base(), Utils_1.getFontColorByBackground(variant, colorTheme), rounded ? '100px' : '4px', color_1.default(colorTheme[variant].base()).mix(color_1.default(colorTheme.white.base()), .2).toString(), color_1.default(colorTheme[variant].base()).mix(color_1.default(colorTheme.white.base()), .2).toString(), color_1.default(colorTheme[variant].base()).mix(color_1.default(colorTheme.black.base()), .1).toString(), color_1.default(colorTheme[variant].base()).fade(.6).toString());
     return (react_1.default.createElement(framer_motion_1.motion.button, __assign({}, buttonProps, { whileTap: props.disabled ? null : { scale: .95 }, className: emotion_1.cx(buttonStyles, styles) }), props.children));
 };
-exports.Button.defaultProps = {
+exports.Button = Button;
+Button.defaultProps = {
     variant: 'primary'
 };
 var templateObject_1;

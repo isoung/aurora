@@ -27,11 +27,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var Icon_1 = require("../../Icon/Icon");
-exports.CloseButton = function (props) {
+var CloseButton = function (props) {
     var variant = props.variant, styles = props.styles, size = props.size, onClose = props.onClose, icon = props.icon, iconProps = __rest(props, ["variant", "styles", "size", "onClose", "icon"]);
     return (react_1.default.createElement(Icon_1.Icon, __assign({ onInteraction: onClose, icon: icon, size: size, styles: styles, isInteractable: true, variant: variant, interactableVariant: 'black' }, iconProps)));
 };
-exports.CloseButton.defaultProps = {
+exports.CloseButton = CloseButton;
+CloseButton.defaultProps = {
     variant: 'dark',
     icon: 'far fa-times'
 };

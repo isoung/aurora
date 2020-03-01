@@ -19,7 +19,7 @@ var react_1 = __importStar(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
 var EntranceAnimation_1 = require("../Animation/EntranceAnimation");
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.Popover = function (props) {
+var Popover = function (props) {
     var _a = react_1.useState(null), left = _a[0], setLeft = _a[1];
     var _b = react_1.useState(null), top = _b[0], setTop = _b[1];
     var _c = react_1.useState(null), right = _c[0], setRight = _c[1];
@@ -95,7 +95,8 @@ exports.Popover = function (props) {
                 } },
                 react_1.default.createElement(EntranceAnimation_1.EntranceAnimation, { hiddenScale: .9, visibleDelay: .05, styles: emotion_1.cx(popoverStyles, props.styles) }, props.content))) : null), bodyElement)));
 };
-exports.Popover.defaultProps = {
+exports.Popover = Popover;
+Popover.defaultProps = {
     position: 'top'
 };
 var templateObject_1;

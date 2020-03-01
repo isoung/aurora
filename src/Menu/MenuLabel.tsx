@@ -4,7 +4,7 @@ import React from 'react';
 import { ComponentStyleProps } from '../ComponentProps';
 
 interface MenuLabelProps extends ComponentStyleProps {}
-export const MenuLabel: React.FC<MenuLabelProps> = (props) => {
+const MenuLabel: React.FC<MenuLabelProps> = (props) => {
   const menuLabelStyles = css`
     padding: 12px 16px 12px 16px;
   `;
@@ -14,4 +14,8 @@ export const MenuLabel: React.FC<MenuLabelProps> = (props) => {
       {props.children}
     </div>
   );
+};
+
+export {
+  MenuLabel
 };

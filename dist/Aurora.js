@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var AuroraProvider_1 = require("./AuroraProvider");
 var NotificationStore_1 = require("./Notification/NotificationStore");
 var ThemeStore_1 = require("./Theme/ThemeStore");
-exports.Aurora = function (props) {
+var Aurora = function (props) {
     var initialTheme = {
         colorTheme: props.colorTheme ? props.colorTheme : {},
         fontTheme: props.fontTheme ? props.fontTheme : {}
@@ -16,4 +16,5 @@ exports.Aurora = function (props) {
         react_1.default.createElement(NotificationStore_1.NotificationStore.Provider, null,
             react_1.default.createElement(AuroraProvider_1.AuroraProvider, null, props.children))));
 };
+exports.Aurora = Aurora;
 //# sourceMappingURL=Aurora.js.map

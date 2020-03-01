@@ -4,7 +4,7 @@ import React from 'react';
 import { ComponentStyleProps } from '../ComponentProps';
 
 interface ModalContentProps extends ComponentStyleProps {}
-export const ModalContent: React.FC<ModalContentProps> = (props) => {
+const ModalContent: React.FC<ModalContentProps> = (props) => {
   const modalContentStyles = css`
     padding-left: 2rem;
     padding-right: 2rem;
@@ -15,4 +15,8 @@ export const ModalContent: React.FC<ModalContentProps> = (props) => {
       {props.children}
     </div>
   );
+};
+
+export {
+  ModalContent
 };

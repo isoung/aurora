@@ -5,7 +5,7 @@ import { ComponentProps } from '../ComponentProps';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 interface AvatarGroupProps extends ComponentProps {}
-export const AvatarGroup: React.FC<AvatarGroupProps> = (props) => {
+const AvatarGroup: React.FC<AvatarGroupProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -34,4 +34,7 @@ export const AvatarGroup: React.FC<AvatarGroupProps> = (props) => {
 };
 AvatarGroup.defaultProps = {
   variant: 'white'
+};
+export {
+  AvatarGroup
 };

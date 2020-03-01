@@ -10,7 +10,7 @@ export type LightButtonVariants = Omit<ColorTheme, 'light' | 'white'>;
 interface LightButtonProps extends Omit<ButtonProps, 'variant'> {
   variant?: keyof LightButtonVariants;
 }
-export const LightButton: React.FC<LightButtonProps> = (props) => {
+const LightButton: React.FC<LightButtonProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -44,4 +44,8 @@ export const LightButton: React.FC<LightButtonProps> = (props) => {
 };
 LightButton.defaultProps = {
   variant: 'primary'
+};
+
+export {
+  LightButton
 };

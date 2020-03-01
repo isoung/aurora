@@ -38,7 +38,7 @@ var react_1 = __importStar(require("react"));
 var Popover_1 = require("../Popover/Popover");
 var Utils_1 = require("../Theme/Color/Utils");
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.Tooltip = function (props) {
+var Tooltip = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var _a = react_1.useState(null), top = _a[0], setTop = _a[1];
@@ -97,7 +97,8 @@ exports.Tooltip = function (props) {
     return (react_1.default.createElement(Popover_1.Popover, __assign({}, tooltipProps, { position: position, content: react_1.default.createElement("div", { className: emotion_1.cx(tooltipStyles, styles) }, props.content) }),
         react_1.default.createElement("div", { ref: childRef }, props.children)));
 };
-exports.Tooltip.defaultProps = {
+exports.Tooltip = Tooltip;
+Tooltip.defaultProps = {
     variant: 'white',
     position: 'top'
 };

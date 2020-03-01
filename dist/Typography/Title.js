@@ -32,12 +32,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Text_1 = require("./Text");
-exports.Title = function (props) {
+var Title = function (props) {
     var styles = props.styles, titleProps = __rest(props, ["styles"]);
     var titleStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject([""], [""])));
     return (react_1.default.createElement(Text_1.Text, __assign({ tag: 'h1', styles: emotion_1.cx(titleStyles, styles) }, titleProps), props.children));
 };
-exports.Title.defaultProps = {
+exports.Title = Title;
+Title.defaultProps = {
     size: 'large'
 };
 var templateObject_1;

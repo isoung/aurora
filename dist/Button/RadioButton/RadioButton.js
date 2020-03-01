@@ -13,7 +13,7 @@ var react_1 = __importDefault(require("react"));
 var EntranceAnimation_1 = require("../../Animation/EntranceAnimation");
 var Container_1 = require("../../Layout/Container/Container");
 var ThemeStore_1 = require("../../Theme/ThemeStore");
-exports.RadioButton = function (props) {
+var RadioButton = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var radioButtonContainerStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    cursor: pointer;\n    padding: 8px 12px 8px 12px;\n    border-radius: 32px;\n\n    &:hover {\n      background-color: ", ";\n    }\n  "], ["\n    cursor: pointer;\n    padding: 8px 12px 8px 12px;\n    border-radius: 32px;\n\n    &:hover {\n      background-color: ", ";\n    }\n  "])), color_1.default(colorTheme[props.variant].light()).fade(.6).toString());
@@ -31,7 +31,8 @@ exports.RadioButton = function (props) {
                 react_1.default.createElement(EntranceAnimation_1.EntranceAnimation, { styles: radioInnerButtonStyles }))),
         react_1.default.createElement(Container_1.Container, null, props.children)));
 };
-exports.RadioButton.defaultProps = {
+exports.RadioButton = RadioButton;
+RadioButton.defaultProps = {
     variant: 'primary',
     innerColor: 'white'
 };

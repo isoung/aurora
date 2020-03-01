@@ -5,5 +5,5 @@ interface TagProps extends ComponentProps, InteractableProps, React.HTMLAttribut
     isDeletable?: boolean;
     onDelete?: (e: any) => void;
 }
-export declare const Tag: React.FC<TagProps>;
-export {};
+declare const Tag: React.FC<TagProps>;
+export { Tag };

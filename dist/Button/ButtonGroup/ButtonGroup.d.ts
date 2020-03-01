@@ -3,5 +3,5 @@ import { ComponentStyleProps } from '../../ComponentProps';
 interface ButtonGroupProps extends ComponentStyleProps {
     rounded?: boolean;
 }
-export declare const ButtonGroup: React.FC<ButtonGroupProps>;
-export {};
+declare const ButtonGroup: React.FC<ButtonGroupProps>;
+export { ButtonGroup };

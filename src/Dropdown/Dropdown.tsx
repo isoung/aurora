@@ -6,7 +6,7 @@ import { Popover, PopoverProps } from '../Popover/Popover';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 interface DropdownProps extends ComponentStyleProps, PopoverProps {}
-export const Dropdown: React.FC<DropdownProps> = (props) => {
+const Dropdown: React.FC<DropdownProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -79,4 +79,8 @@ export const Dropdown: React.FC<DropdownProps> = (props) => {
 };
 Dropdown.defaultProps = {
   position: 'right'
+};
+
+export {
+  Dropdown
 };

@@ -32,12 +32,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var ResponsiveStyles_1 = require("../ResponsiveStyles");
-exports.Avatar = function (props) {
+var Avatar = function (props) {
     var styles = props.styles, imgUrl = props.imgUrl, height = props.height, width = props.width, rounded = props.rounded, isInteractable = props.isInteractable, onInteraction = props.onInteraction, avatarProps = __rest(props, ["styles", "imgUrl", "height", "width", "rounded", "isInteractable", "onInteraction"]);
     var avatarStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    border-radius: ", ";\n    cursor: ", ";\n\n    ", ";\n  "], ["\n    border-radius: ", ";\n    cursor: ", ";\n\n    ", ";\n  "])), rounded ? '4px' : '100px', isInteractable ? 'pointer' : 'auto', ResponsiveStyles_1.getPropStyle(props));
     return (react_1.default.createElement("img", __assign({}, avatarProps, { onClick: onInteraction, className: emotion_1.cx(avatarStyles, styles), src: imgUrl })));
 };
-exports.Avatar.defaultProps = {
+exports.Avatar = Avatar;
+Avatar.defaultProps = {
     height: '48px',
     width: '48px'
 };

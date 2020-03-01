@@ -5,7 +5,7 @@ import { ComponentStyleProps } from '../ComponentProps';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 interface DropdownDividerProps extends ComponentStyleProps {}
-export const DropdownDivider: React.FC<DropdownDividerProps> = (props) => {
+const DropdownDivider: React.FC<DropdownDividerProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -16,4 +16,8 @@ export const DropdownDivider: React.FC<DropdownDividerProps> = (props) => {
   `;
 
   return <div className={cx(dropdownDividerStyles, props.styles)}/>;
+};
+
+export {
+  DropdownDivider
 };

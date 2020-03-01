@@ -12,7 +12,7 @@ import { ThemeStore } from '../../Theme/ThemeStore';
 interface RadioButton extends ComponentProps, SelectionProps {
   innerColor?: ColorThemeSelectionTypes;
 }
-export const RadioButton: React.FC<RadioButton> = (props) => {
+const RadioButton: React.FC<RadioButton> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -83,4 +83,8 @@ export const RadioButton: React.FC<RadioButton> = (props) => {
 RadioButton.defaultProps = {
   variant: 'primary',
   innerColor: 'white'
+};
+
+export {
+  RadioButton
 };

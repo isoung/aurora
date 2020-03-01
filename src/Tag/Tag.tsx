@@ -19,7 +19,7 @@ interface TagProps extends ComponentProps, InteractableProps, React.HTMLAttribut
   isDeletable?: boolean;
   onDelete?: (e: any) => void;
 }
-export const Tag: React.FC<TagProps> = (props) => {
+const Tag: React.FC<TagProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -73,4 +73,8 @@ export const Tag: React.FC<TagProps> = (props) => {
 };
 Tag.defaultProps = {
   variant: 'secondary'
+};
+
+export {
+  Tag
 };

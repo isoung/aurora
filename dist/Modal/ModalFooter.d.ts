@@ -6,5 +6,5 @@ declare type ModalFooterVariants = Pick<ColorTheme, 'light' | 'primary' | 'white
 interface ModalFooterProps extends Omit<ComponentProps, 'variant'>, ContainerProps {
     variant?: keyof ModalFooterVariants;
 }
-export declare const ModalFooter: React.FC<ModalFooterProps>;
-export {};
+declare const ModalFooter: React.FC<ModalFooterProps>;
+export { ModalFooter };

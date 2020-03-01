@@ -10,7 +10,7 @@ interface DropdownItemProps extends ComponentStyleProps {
   onSelection?: () => void;
   hoverable?: boolean;
 }
-export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
+const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -44,4 +44,8 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
 DropdownItem.defaultProps = {
   selected: false,
   hoverable: false
+};
+
+export {
+  DropdownItem
 };

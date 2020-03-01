@@ -7,7 +7,7 @@ import { SelectionProps } from '../SelectionProps';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 interface MenuItemProps extends ComponentProps, InteractableProps, SelectionProps {}
-export const MenuItem: React.FC<MenuItemProps> = (props) => {
+const MenuItem: React.FC<MenuItemProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -37,4 +37,8 @@ MenuItem.defaultProps = {
   selected: false,
   variant: 'primary',
   isInteractable: true
+};
+
+export {
+  MenuItem
 };

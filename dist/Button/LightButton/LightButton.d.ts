@@ -5,5 +5,5 @@ export declare type LightButtonVariants = Omit<ColorTheme, 'light' | 'white'>;
 interface LightButtonProps extends Omit<ButtonProps, 'variant'> {
     variant?: keyof LightButtonVariants;
 }
-export declare const LightButton: React.FC<LightButtonProps>;
-export {};
+declare const LightButton: React.FC<LightButtonProps>;
+export { LightButton };

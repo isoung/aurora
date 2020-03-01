@@ -32,14 +32,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Container_1 = require("../Layout/Container/Container");
-exports.NavbarContent = function (props) {
+var NavbarContent = function (props) {
     var styles = props.styles, containerProps = __rest(props, ["styles"]);
     var navbarContentStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    margin-left: 24px;\n    margin-right: 24px;\n    flex-grow: 1;\n  "], ["\n    margin-left: 24px;\n    margin-right: 24px;\n    flex-grow: 1;\n  "])));
     var navbarContentContainerStyles = emotion_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    height: 100%;\n    width: 100%;\n  "], ["\n    height: 100%;\n    width: 100%;\n  "])));
     return (react_1.default.createElement("div", { className: emotion_1.cx(navbarContentStyles, props.styles) },
         react_1.default.createElement(Container_1.Container, __assign({}, containerProps, { styles: navbarContentContainerStyles }), props.children)));
 };
-exports.NavbarContent.defaultProps = {
+exports.NavbarContent = NavbarContent;
+NavbarContent.defaultProps = {
     alignment: 'center'
 };
 var templateObject_1, templateObject_2;

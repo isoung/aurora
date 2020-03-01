@@ -14,7 +14,7 @@ type NotificationProviderPosition =
 interface NotificationProviderProps {
   position?: NotificationProviderPosition;
 }
-export const NotificationProvider: React.FC<NotificationProviderProps> = (props) => {
+const NotificationProvider: React.FC<NotificationProviderProps> = (props) => {
   const notificationStore = NotificationStore.useContainer();
 
   const notificationProviderStyles = css`
@@ -36,4 +36,8 @@ export const NotificationProvider: React.FC<NotificationProviderProps> = (props)
 };
 NotificationProvider.defaultProps = {
   position: 'top-right'
+};
+
+export {
+  NotificationProvider
 };

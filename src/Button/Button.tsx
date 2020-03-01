@@ -11,7 +11,7 @@ import { ThemeStore } from '../Theme/ThemeStore';
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ComponentProps {
   rounded?: boolean;
 }
-export const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const themeStore = useContainer(ThemeStore);
   const colorTheme = themeStore.getColorTheme();
 
@@ -66,4 +66,8 @@ export const Button: React.FC<ButtonProps> = (props) => {
 };
 Button.defaultProps = {
   variant: 'primary'
+};
+
+export {
+  Button
 };

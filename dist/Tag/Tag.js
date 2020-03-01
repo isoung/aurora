@@ -39,7 +39,7 @@ var ThemeStore_1 = require("../Theme/ThemeStore");
 var getCompositeDeleteButtonColors = function (variant, colorTheme) {
     return color_1.default(colorTheme[variant].base()).isLight() ? 'black' : 'white';
 };
-exports.Tag = function (props) {
+var Tag = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var variant = props.variant, styles = props.styles, isInteractable = props.isInteractable, onInteraction = props.onInteraction, isDeletable = props.isDeletable, onDelete = props.onDelete, tagProps = __rest(props, ["variant", "styles", "isInteractable", "onInteraction", "isDeletable", "onDelete"]);
@@ -50,7 +50,8 @@ exports.Tag = function (props) {
         isDeletable ? react_1.default.createElement(Button_1.Button, { styles: tagDeleteButtonStyles, onClick: onDelete, variant: variant },
             react_1.default.createElement(Icon_1.Icon, { icon: 'fas fa-times', variant: getCompositeDeleteButtonColors(variant, colorTheme), styles: emotion_1.css(templateObject_3 || (templateObject_3 = __makeTemplateObject(["cursor: pointer;"], ["cursor: pointer;"]))) })) : null));
 };
-exports.Tag.defaultProps = {
+exports.Tag = Tag;
+Tag.defaultProps = {
     variant: 'secondary'
 };
 var templateObject_1, templateObject_2, templateObject_3;

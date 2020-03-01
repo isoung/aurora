@@ -32,12 +32,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Container_1 = require("../Layout/Container/Container");
-exports.NavbarBrand = function (props) {
+var NavbarBrand = function (props) {
     var styles = props.styles, containerProps = __rest(props, ["styles"]);
     var navbarBrandStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    height: 100%;\n    padding-left: 24px;\n    padding-right: 24px;\n  "], ["\n    height: 100%;\n    padding-left: 24px;\n    padding-right: 24px;\n  "])));
     return (react_1.default.createElement(Container_1.Container, __assign({}, containerProps, { styles: emotion_1.cx(navbarBrandStyles, props.styles) }), props.children));
 };
-exports.NavbarBrand.defaultProps = {
+exports.NavbarBrand = NavbarBrand;
+NavbarBrand.defaultProps = {
     alignment: 'center'
 };
 var templateObject_1;

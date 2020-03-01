@@ -9,7 +9,7 @@ import { Container, ContainerProps } from '../Container/Container';
 
 interface TileProps extends
   ComponentProps, ContainerProps, ResponsiveStyleProps, React.HtmlHTMLAttributes<HTMLElement> {}
-export const Tile: React.FC<TileProps> = (props) => {
+const Tile: React.FC<TileProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -33,4 +33,8 @@ export const Tile: React.FC<TileProps> = (props) => {
 };
 Tile.defaultProps = {
   variant: 'white'
+};
+
+export {
+  Tile
 };

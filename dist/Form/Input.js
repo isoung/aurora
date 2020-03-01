@@ -33,14 +33,15 @@ var color_1 = __importDefault(require("color"));
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.Input = function (props) {
+var Input = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var variant = props.variant, styles = props.styles, hasIconLeft = props.hasIconLeft, hasIconRight = props.hasIconRight, hasAddonRight = props.hasAddonRight, inputProps = __rest(props, ["variant", "styles", "hasIconLeft", "hasIconRight", "hasAddonRight"]);
     var inputStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    background-color: ", ";\n    color: ", ";\n    border: 1px solid transparent;\n    border-bottom-left-radius: 4px;\n    border-top-left-radius: 4px;\n    border-bottom-right-radius: ", ";\n    border-top-right-radius: ", ";\n    outline: none;\n    padding-top: 8px;\n    padding-bottom: 8px;\n    padding-left: ", ";\n    padding-right: ", ";\n    font-size: 16px;\n    transition:\n      border-color 50ms ease-in-out,\n      box-shadow 100ms ease-in-out;\n\n    &::placeholder {\n      color: ", ";\n    }\n\n    &:focus {\n      border-color: ", ";\n      box-shadow:\n        0 0.313rem 0.719rem ", ", 0 0.156rem 0.125rem rgba(0,0,0,.06);\n    }\n\n    &:focus + span i {\n      color: ", ";\n    }\n  "], ["\n    background-color: ", ";\n    color: ", ";\n    border: 1px solid transparent;\n    border-bottom-left-radius: 4px;\n    border-top-left-radius: 4px;\n    border-bottom-right-radius: ", ";\n    border-top-right-radius: ", ";\n    outline: none;\n    padding-top: 8px;\n    padding-bottom: 8px;\n    padding-left: ", ";\n    padding-right: ", ";\n    font-size: 16px;\n    transition:\n      border-color 50ms ease-in-out,\n      box-shadow 100ms ease-in-out;\n\n    &::placeholder {\n      color: ", ";\n    }\n\n    &:focus {\n      border-color: ", ";\n      box-shadow:\n        0 0.313rem 0.719rem ", ", 0 0.156rem 0.125rem rgba(0,0,0,.06);\n    }\n\n    &:focus + span i {\n      color: ", ";\n    }\n  "])), colorTheme.light.base(), colorTheme.black.base(), hasAddonRight ? '0px' : '4px', hasAddonRight ? '0px' : '4px', hasIconLeft ? '2.5rem' : '12px', hasIconRight ? '2.5rem' : '12px', colorTheme.dark.base(), colorTheme[variant].base(), color_1.default(colorTheme[variant].base()).fade(.85).toString(), colorTheme.black.base());
     return (react_1.default.createElement("input", __assign({}, inputProps, { className: emotion_1.cx(inputStyles, styles) })));
 };
-exports.Input.defaultProps = {
+exports.Input = Input;
+Input.defaultProps = {
     variant: 'primary'
 };
 var templateObject_1;

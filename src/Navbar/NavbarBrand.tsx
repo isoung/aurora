@@ -5,7 +5,7 @@ import { ComponentStyleProps } from '../ComponentProps';
 import { Container, ContainerProps } from '../Layout/Container/Container';
 
 interface NavbarBrandProps extends ComponentStyleProps, ContainerProps {}
-export const NavbarBrand: React.FC<NavbarBrandProps> = (props) => {
+const NavbarBrand: React.FC<NavbarBrandProps> = (props) => {
   const {
     styles,
     ...containerProps
@@ -25,4 +25,8 @@ export const NavbarBrand: React.FC<NavbarBrandProps> = (props) => {
 };
 NavbarBrand.defaultProps = {
   alignment: 'center'
+};
+
+export {
+  NavbarBrand
 };

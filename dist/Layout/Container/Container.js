@@ -32,10 +32,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var ResponsiveStyles_1 = require("../../ResponsiveStyles");
-exports.Container = function (props) {
+var Container = function (props) {
     var styles = props.styles, width = props.width, height = props.height, position = props.position, direction = props.direction, alignment = props.alignment, containerProps = __rest(props, ["styles", "width", "height", "position", "direction", "alignment"]);
     var containerStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: flex;\n    justify-content: ", ";\n    flex-flow: ", ";\n    align-items: ", ";\n\n    ", "\n  "], ["\n    display: flex;\n    justify-content: ", ";\n    flex-flow: ", ";\n    align-items: ", ";\n\n    ", "\n  "])), position, direction, alignment, ResponsiveStyles_1.getPropStyle(props));
     return (react_1.default.createElement("div", __assign({}, containerProps, { className: emotion_1.cx(containerStyles, styles) }), props.children));
 };
+exports.Container = Container;
 var templateObject_1;
 //# sourceMappingURL=Container.js.map

@@ -6,7 +6,7 @@ import { getPropStyle, ResponsiveStyleProps } from '../ResponsiveStyles';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 interface MenuProps extends ComponentProps, ResponsiveStyleProps {}
-export const Menu: React.FC<MenuProps> = (props) => {
+const Menu: React.FC<MenuProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -26,4 +26,8 @@ Menu.defaultProps = {
   variant: 'primary',
   width: '240px',
   height: '100%'
+};
+
+export {
+  Menu
 };

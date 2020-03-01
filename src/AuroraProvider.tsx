@@ -3,7 +3,7 @@ import React from 'react';
 
 import { ThemeStore } from './Theme/ThemeStore';
 
-export const AuroraProvider: React.FC = (props) => {
+const AuroraProvider: React.FC = (props) => {
   const themeStore = ThemeStore.useContainer();
   const fontTheme = themeStore.getFontTheme();
 
@@ -19,4 +19,8 @@ export const AuroraProvider: React.FC = (props) => {
       {props.children}
     </div>
   );
+};
+
+export {
+  AuroraProvider
 };

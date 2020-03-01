@@ -9,7 +9,7 @@ import { Container, ContainerProps } from '../Layout/Container/Container';
 interface ModalHeaderProps extends ComponentStyleProps, InteractableProps, ContainerProps {
   interactionIcon?: string;
 }
-export const ModalHeader: React.FC<ModalHeaderProps> = (props) => {
+const ModalHeader: React.FC<ModalHeaderProps> = (props) => {
   const modalHeaderContainerStyles = css`
     padding-left: 2rem;
     padding-right: 1rem;
@@ -42,4 +42,8 @@ export const ModalHeader: React.FC<ModalHeaderProps> = (props) => {
 };
 ModalHeader.defaultProps = {
   interactionIcon: 'far fa-times'
+};
+
+export {
+  ModalHeader
 };

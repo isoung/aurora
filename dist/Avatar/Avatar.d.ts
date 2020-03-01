@@ -5,5 +5,5 @@ import { ResponsiveStyleProps } from '../ResponsiveStyles';
 interface AvatarProps extends ComponentImgProps, InteractableProps, ResponsiveStyleProps, React.HtmlHTMLAttributes<HTMLImageElement> {
     rounded?: boolean;
 }
-export declare const Avatar: React.FC<AvatarProps>;
-export {};
+declare const Avatar: React.FC<AvatarProps>;
+export { Avatar };

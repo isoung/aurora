@@ -7,7 +7,7 @@ import { getFontColorByBackground } from '../Theme/Color/Utils';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 interface TooltipProps extends PopoverProps, ComponentProps {}
-export const Tooltip: React.FC<TooltipProps> = (props) => {
+const Tooltip: React.FC<TooltipProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
   const [top, setTop] = useState(null);
@@ -110,4 +110,8 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
 Tooltip.defaultProps = {
   variant: 'white',
   position: 'top'
+};
+
+export {
+  Tooltip
 };

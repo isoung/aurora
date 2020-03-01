@@ -5,5 +5,5 @@ import { ColorThemeSelectionTypes } from '../../Theme/Color/ColorPalette';
 interface RadioButton extends ComponentProps, SelectionProps {
     innerColor?: ColorThemeSelectionTypes;
 }
-export declare const RadioButton: React.FC<RadioButton>;
-export {};
+declare const RadioButton: React.FC<RadioButton>;
+export { RadioButton };

@@ -34,14 +34,15 @@ var react_1 = __importDefault(require("react"));
 var Utils_1 = require("../../Theme/Color/Utils");
 var ThemeStore_1 = require("../../Theme/ThemeStore");
 var Container_1 = require("../Container/Container");
-exports.Tile = function (props) {
+var Tile = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var variant = props.variant, styles = props.styles, tileProps = __rest(props, ["variant", "styles"]);
     var tileStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    border-radius: 4px;\n    background-color: ", ";\n    color: ", "\n  "], ["\n    border-radius: 4px;\n    background-color: ", ";\n    color: ", "\n  "])), colorTheme[variant].base(), Utils_1.getFontColorByBackground(variant, colorTheme));
     return (react_1.default.createElement(Container_1.Container, __assign({}, tileProps, { styles: emotion_1.cx(tileStyles, props.styles) }), props.children));
 };
-exports.Tile.defaultProps = {
+exports.Tile = Tile;
+Tile.defaultProps = {
     variant: 'white'
 };
 var templateObject_1;

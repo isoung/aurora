@@ -1,2 +1,3 @@
 import React from 'react';
-export declare const AuroraProvider: React.FC;
+declare const AuroraProvider: React.FC;
+export { AuroraProvider };

@@ -33,7 +33,7 @@ var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Popover_1 = require("../Popover/Popover");
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.Dropdown = function (props) {
+var Dropdown = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var styles = props.styles, content = props.content, active = props.active, onClose = props.onClose, popoverProps = __rest(props, ["styles", "content", "active", "onClose"]);
@@ -49,7 +49,8 @@ exports.Dropdown = function (props) {
         active &&
             react_1.default.createElement("div", { className: dropdownOverlayStyles, onClick: dropdownOverlayClick })));
 };
-exports.Dropdown.defaultProps = {
+exports.Dropdown = Dropdown;
+Dropdown.defaultProps = {
     position: 'right'
 };
 var templateObject_1, templateObject_2;

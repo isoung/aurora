@@ -16,7 +16,7 @@ interface NotificationProps extends ComponentProps {
   text: string;
   duration?: number;
 }
-export const Notification: React.FC<NotificationProps> = (props) => {
+const Notification: React.FC<NotificationProps> = (props) => {
   const notificationStore = NotificationStore.useContainer();
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
@@ -91,4 +91,8 @@ export const Notification: React.FC<NotificationProps> = (props) => {
 Notification.defaultProps = {
   variant: 'primary',
   duration: 5000
+};
+
+export {
+  Notification
 };

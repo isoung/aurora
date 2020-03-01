@@ -22,7 +22,7 @@ export interface PopoverProps extends ActiveProps, ComponentStyleProps {
   content?: JSX.Element;
   position?: 'left' | 'top' | 'right' | 'bottom';
 }
-export const Popover: React.FC<PopoverProps> = (props) => {
+const Popover: React.FC<PopoverProps> = (props) => {
   const [left, setLeft] = useState(null);
   const [top, setTop] = useState(null);
   const [right, setRight] = useState(null);
@@ -145,4 +145,8 @@ export const Popover: React.FC<PopoverProps> = (props) => {
 };
 Popover.defaultProps = {
   position: 'top'
+};
+
+export {
+  Popover
 };

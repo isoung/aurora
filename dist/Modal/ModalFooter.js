@@ -34,14 +34,15 @@ var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
 var Container_1 = require("../Layout/Container/Container");
 var ThemeStore_1 = require("../Theme/ThemeStore");
-exports.ModalFooter = function (props) {
+var ModalFooter = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var variant = props.variant, styles = props.styles, containerProps = __rest(props, ["variant", "styles"]);
     var modalFooterStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    background-color: ", ";\n    padding: 2rem;\n    padding-top: .5rem;\n    padding-bottom: .75rem;\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  "], ["\n    background-color: ", ";\n    padding: 2rem;\n    padding-top: .5rem;\n    padding-bottom: .75rem;\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  "])), color_1.default(colorTheme[variant].base()).mix(color_1.default(colorTheme.white.base()), .5).fade(.8).toString());
     return (react_1.default.createElement(Container_1.Container, __assign({}, containerProps, { styles: emotion_1.cx(modalFooterStyles, styles) }), props.children));
 };
-exports.ModalFooter.defaultProps = {
+exports.ModalFooter = ModalFooter;
+ModalFooter.defaultProps = {
     variant: 'white'
 };
 var templateObject_1;

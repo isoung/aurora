@@ -19,7 +19,7 @@ var Container_1 = require("../Layout/Container/Container");
 var ThemeStore_1 = require("../Theme/ThemeStore");
 var Text_1 = require("../Typography/Text");
 var NotificationStore_1 = require("./NotificationStore");
-exports.Notification = function (props) {
+var Notification = function (props) {
     var notificationStore = NotificationStore_1.NotificationStore.useContainer();
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
@@ -45,7 +45,8 @@ exports.Notification = function (props) {
                         react_1.default.createElement(CloseButton_1.CloseButton, { styles: closeButtonStyles, variant: 'danger', onClose: function () { return null; } })),
                     react_1.default.createElement(Text_1.Text, null, "Close"))))));
 };
-exports.Notification.defaultProps = {
+exports.Notification = Notification;
+Notification.defaultProps = {
     variant: 'primary',
     duration: 5000
 };

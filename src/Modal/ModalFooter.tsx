@@ -11,7 +11,7 @@ type ModalFooterVariants = Pick<ColorTheme, 'light' | 'primary' | 'white'>;
 interface ModalFooterProps extends Omit<ComponentProps, 'variant'>, ContainerProps {
   variant?: keyof ModalFooterVariants;
 }
-export const ModalFooter: React.FC<ModalFooterProps> = (props) => {
+const ModalFooter: React.FC<ModalFooterProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -38,4 +38,8 @@ export const ModalFooter: React.FC<ModalFooterProps> = (props) => {
 };
 ModalFooter.defaultProps = {
   variant: 'white'
+};
+
+export {
+  ModalFooter
 };

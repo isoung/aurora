@@ -6,7 +6,7 @@ import { Container } from '../Layout/Container/Container';
 import { ThemeStore } from '../Theme/ThemeStore';
 
 interface NavbarProps extends ComponentProps {}
-export const Navbar: React.FC<NavbarProps> = (props) => {
+const Navbar: React.FC<NavbarProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
@@ -28,4 +28,8 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
 };
 Navbar.defaultProps = {
   variant: 'white'
+};
+
+export {
+  Navbar
 };

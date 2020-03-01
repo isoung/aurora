@@ -4,7 +4,7 @@ import React from 'react';
 import { ComponentStyleProps } from '../ComponentProps';
 
 interface FormFieldProps extends ComponentStyleProps {}
-export const FormField: React.FC<FormFieldProps> = (props) => {
+const FormField: React.FC<FormFieldProps> = (props) => {
   const formFieldStyles = css`
     position: relative;
     margin-bottom: 12px;
@@ -22,4 +22,8 @@ export const FormField: React.FC<FormFieldProps> = (props) => {
       {props.children}
     </div>
   );
+};
+
+export {
+  FormField
 };

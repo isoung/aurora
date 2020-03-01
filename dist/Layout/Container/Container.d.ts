@@ -9,4 +9,5 @@ export interface ContainerProps extends ComponentStyleProps, ResponsiveStyleProp
     direction?: ContainerFlexFlow;
     alignment?: ContainerAlignItems;
 }
-export declare const Container: React.FC<ContainerProps>;
+declare const Container: React.FC<ContainerProps>;
+export { Container };
