@@ -15,7 +15,7 @@ export { Form } from './Form/Form';
 export { FormField } from './Form/FormField';
 export { FormFieldIcon } from './Form/FormFieldIcon';
 export { Input } from './Form/Input';
-export { Icon } from './Icon/Icon';
+export { Icon, IconProps, IconSize } from './Icon/Icon';
 export { Container } from './Layout/Container/Container';
 export { Tile } from './Layout/Tile/Tile';
 export { Modal } from './Modal/Modal';
