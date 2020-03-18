@@ -5,7 +5,8 @@ import React from 'react';
 import { ComponentProps } from '../ComponentProps';
 import { ThemeStore } from '../Theme/ThemeStore';
 
-interface InputProps extends ComponentProps, React.HTMLAttributes<HTMLInputElement> {
+interface InputProps extends ComponentProps,
+  React.InputHTMLAttributes<HTMLInputElement> {
   hasIconLeft?: boolean;
   hasIconRight?: boolean;
   hasAddonRight?: boolean;
