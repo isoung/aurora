@@ -20,6 +20,7 @@ var ProgressBar = react_1.default.memo(function (props) {
 });
 exports.ProgressBar = ProgressBar;
 ProgressBar.defaultProps = {
+    variant: 'primary',
     rounded: false
 };
 var templateObject_1, templateObject_2;

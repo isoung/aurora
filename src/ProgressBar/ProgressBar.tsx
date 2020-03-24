@@ -34,6 +34,7 @@ const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
   );
 });
 ProgressBar.defaultProps = {
+  variant: 'primary',
   rounded: false
 };
 
