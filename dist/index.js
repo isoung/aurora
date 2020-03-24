@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var EntranceAnimation_1 = require("./Animation/EntranceAnimation");
 exports.EntranceAnimation = EntranceAnimation_1.EntranceAnimation;
+var SlideLeftEntranceAnimation_1 = require("./Animation/SlideLeftEntranceAnimation");
+exports.SlideLeftEntranceAnimation = SlideLeftEntranceAnimation_1.SlideLeftEntranceAnimation;
 var Avatar_1 = require("./Avatar/Avatar");
 exports.Avatar = Avatar_1.Avatar;
 var AvatarGroup_1 = require("./Avatar/AvatarGroup");
@@ -60,6 +62,8 @@ var Popover_1 = require("./Popover/Popover");
 exports.Popover = Popover_1.Popover;
 var ProgressBar_1 = require("./ProgressBar/ProgressBar");
 exports.ProgressBar = ProgressBar_1.ProgressBar;
+var QuickView_1 = require("./QuickView/QuickView");
+exports.QuickView = QuickView_1.QuickView;
 var Tag_1 = require("./Tag/Tag");
 exports.Tag = Tag_1.Tag;
 var ThemeStore_1 = require("./Theme/ThemeStore");

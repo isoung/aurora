@@ -1,5 +1,6 @@
 export { AnimationProps } from './Animation/AnimationProps';
 export { EntranceAnimation } from './Animation/EntranceAnimation';
+export { SlideLeftEntranceAnimation } from './Animation/SlideLeftEntranceAnimation';
 export { Avatar } from './Avatar/Avatar';
 export { AvatarGroup } from './Avatar/AvatarGroup';
 export { Button } from './Button/Button';
@@ -29,6 +30,7 @@ export { NotificationProvider } from './Notification/NotificationProvider';
 export { Notification, NotificationStore } from './Notification/NotificationStore';
 export { Popover, PopoverProps } from './Popover/Popover';
 export { ProgressBar } from './ProgressBar/ProgressBar';
+export { QuickView } from './QuickView/QuickView';
 export { Tag } from './Tag/Tag';
 export { ThemeStore, ThemeStoreState } from './Theme/ThemeStore';
 export { ColorTheme, ColorThemeSelection, ColorThemeSelectionTypes, defaultColorTheme } from './Theme/Color/ColorPalette';
