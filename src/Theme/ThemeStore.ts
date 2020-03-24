@@ -21,6 +21,7 @@ function useThemeStore(initialState: ThemeStoreState = {
     success: {...defaultColorTheme.success, ...initialState.colorTheme.success},
     info: {...defaultColorTheme.info, ...initialState.colorTheme.info},
     dark: {...defaultColorTheme.dark, ...initialState.colorTheme.dark},
+    gray: {...defaultColorTheme.gray, ...initialState.colorTheme.gray},
     light: {...defaultColorTheme.light, ...initialState.colorTheme.light},
     white: {...defaultColorTheme.white, ...initialState.colorTheme.white},
     black: {...defaultColorTheme.black, ...initialState.colorTheme.black}
