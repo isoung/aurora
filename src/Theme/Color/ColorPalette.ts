@@ -16,6 +16,7 @@ export interface ColorTheme {
   success?: ColorThemeSelection;
   info?: ColorThemeSelection;
   dark?: ColorThemeSelection;
+  gray?: ColorThemeSelection;
   light?: ColorThemeSelection;
   white?: ColorThemeSelection;
   black?: ColorThemeSelection;
@@ -64,6 +65,13 @@ export const defaultColorTheme: ColorTheme = {
     lighter: () => Color(defaultColorTheme.dark.base()).lighten(.3).toString(),
     dark: () => Color(defaultColorTheme.dark.base()).darken(.15).toString(),
     darker: () => Color(defaultColorTheme.dark.base()).darken(.3).toString()
+  },
+  gray: {
+    base: () => Color('#d1dbe0').toString(),
+    light: () => Color(defaultColorTheme.gray.base()).lighten(.15).toString(),
+    lighter: () => Color(defaultColorTheme.gray.base()).lighten(.3).toString(),
+    dark: () => Color(defaultColorTheme.gray.base()).darken(.15).toString(),
+    darker: () => Color(defaultColorTheme.gray.base()).darken(.3).toString()
   },
   light: {
     base: () => Color('#ededed').toString(),

@@ -13,6 +13,7 @@ export interface ColorTheme {
     success?: ColorThemeSelection;
     info?: ColorThemeSelection;
     dark?: ColorThemeSelection;
+    gray?: ColorThemeSelection;
     light?: ColorThemeSelection;
     white?: ColorThemeSelection;
     black?: ColorThemeSelection;
