@@ -29,6 +29,7 @@ export { NavbarEnd } from './Navbar/NavbarEnd';
 export { NotificationProvider } from './Notification/NotificationProvider';
 export { Notification, NotificationStore } from './Notification/NotificationStore';
 export { Popover, PopoverProps } from './Popover/Popover';
+export { ProgressBar } from './ProgressBar/ProgressBar';
 export { Tag } from './Tag/Tag';
 export { ThemeStore, ThemeStoreState } from './Theme/ThemeStore';
 export { ColorTheme, ColorThemeSelection, ColorThemeSelectionTypes, defaultColorTheme } from './Theme/Color/ColorPalette';
