@@ -22,7 +22,7 @@ const Tile: React.FC<TileProps> = (props) => {
   const tileStyles = css`
     border-radius: 4px;
     background-color: ${colorTheme[variant].base()};
-    color: ${getFontColorByBackground(variant, colorTheme)}
+    color: ${getFontColorByBackground(variant, colorTheme)};
   `;
 
   return (
