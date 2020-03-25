@@ -14,6 +14,7 @@ export interface ColorTheme {
   secondary?: ColorThemeSelection;
   danger?: ColorThemeSelection;
   success?: ColorThemeSelection;
+  warning?: ColorThemeSelection;
   info?: ColorThemeSelection;
   dark?: ColorThemeSelection;
   gray?: ColorThemeSelection;
@@ -47,6 +48,13 @@ export const defaultColorTheme: ColorTheme = {
   },
   success: {
     base: () => Color('#00b262').toString(),
+    light: () => Color(defaultColorTheme.success.base()).lighten(.15).toString(),
+    lighter: () => Color(defaultColorTheme.success.base()).lighten(.3).toString(),
+    dark: () => Color(defaultColorTheme.success.base()).darken(.15).toString(),
+    darker: () => Color(defaultColorTheme.success.base()).darken(.3).toString()
+  },
+  warning: {
+    base: () => Color('#ffc402').toString(),
     light: () => Color(defaultColorTheme.success.base()).lighten(.15).toString(),
     lighter: () => Color(defaultColorTheme.success.base()).lighten(.3).toString(),
     dark: () => Color(defaultColorTheme.success.base()).darken(.15).toString(),

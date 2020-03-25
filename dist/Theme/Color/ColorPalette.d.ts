@@ -11,6 +11,7 @@ export interface ColorTheme {
     secondary?: ColorThemeSelection;
     danger?: ColorThemeSelection;
     success?: ColorThemeSelection;
+    warning?: ColorThemeSelection;
     info?: ColorThemeSelection;
     dark?: ColorThemeSelection;
     gray?: ColorThemeSelection;

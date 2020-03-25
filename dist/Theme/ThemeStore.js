@@ -25,6 +25,7 @@ function useThemeStore(initialState) {
         secondary: __assign(__assign({}, ColorPalette_1.defaultColorTheme.secondary), initialState.colorTheme.secondary),
         danger: __assign(__assign({}, ColorPalette_1.defaultColorTheme.danger), initialState.colorTheme.danger),
         success: __assign(__assign({}, ColorPalette_1.defaultColorTheme.success), initialState.colorTheme.success),
+        warning: __assign(__assign({}, ColorPalette_1.defaultColorTheme.warning), initialState.colorTheme.warning),
         info: __assign(__assign({}, ColorPalette_1.defaultColorTheme.info), initialState.colorTheme.info),
         dark: __assign(__assign({}, ColorPalette_1.defaultColorTheme.dark), initialState.colorTheme.dark),
         gray: __assign(__assign({}, ColorPalette_1.defaultColorTheme.gray), initialState.colorTheme.gray),

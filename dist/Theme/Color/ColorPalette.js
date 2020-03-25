@@ -33,6 +33,13 @@ exports.defaultColorTheme = {
         dark: function () { return color_1.default(exports.defaultColorTheme.success.base()).darken(.15).toString(); },
         darker: function () { return color_1.default(exports.defaultColorTheme.success.base()).darken(.3).toString(); }
     },
+    warning: {
+        base: function () { return color_1.default('#ffc402').toString(); },
+        light: function () { return color_1.default(exports.defaultColorTheme.success.base()).lighten(.15).toString(); },
+        lighter: function () { return color_1.default(exports.defaultColorTheme.success.base()).lighten(.3).toString(); },
+        dark: function () { return color_1.default(exports.defaultColorTheme.success.base()).darken(.15).toString(); },
+        darker: function () { return color_1.default(exports.defaultColorTheme.success.base()).darken(.3).toString(); }
+    },
     info: {
         base: function () { return color_1.default('#3B3E51').toString(); },
         light: function () { return color_1.default(exports.defaultColorTheme.info.base()).lighten(.15).toString(); },
