@@ -11,10 +11,10 @@ interface SlideLeftEntranceAnimationProps extends AnimationProps, ComponentStyle
 const SlideLeftEntranceAnimation: React.FC<SlideLeftEntranceAnimationProps> = (props) => {
   const variants: Variants = {
     hidden: {
-      x: props.hiddenX
+      translateX: props.hiddenX
     },
     visible: {
-      x: props.visibleX
+      translateX: props.visibleX
     }
   };
 

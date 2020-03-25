@@ -8,10 +8,10 @@ var react_1 = __importDefault(require("react"));
 var SlideLeftEntranceAnimation = function (props) {
     var variants = {
         hidden: {
-            x: props.hiddenX
+            translateX: props.hiddenX
         },
         visible: {
-            x: props.visibleX
+            translateX: props.visibleX
         }
     };
     var transition = {
