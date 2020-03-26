@@ -21,8 +21,11 @@ interface DOMRect {
 export interface PopoverProps extends ActiveProps, ComponentStyleProps {
   content?: JSX.Element;
   position?: 'left' | 'top' | 'right' | 'bottom';
+  containerStyles?: string;
 }
 const Popover: React.FC<PopoverProps> = (props) => {
+  const [height, setHeight] = useState(null);
+  const [width, setWidth] = useState(null);
   const [left, setLeft] = useState(null);
   const [top, setTop] = useState(null);
   const [right, setRight] = useState(null);
@@ -40,6 +43,8 @@ const Popover: React.FC<PopoverProps> = (props) => {
       setLeft(resizedBoundingRect.left);
       setBottom(resizedBoundingRect.bottom);
       setRight(resizedBoundingRect.right);
+      setHeight(resizedBoundingRect.height);
+      setWidth(resizedBoundingRect.width);
     };
 
     window.addEventListener('resize', setPositionFn);
@@ -49,6 +54,8 @@ const Popover: React.FC<PopoverProps> = (props) => {
     setLeft(boundingRect.left);
     setBottom(boundingRect.bottom);
     setRight(boundingRect.right);
+    setHeight(boundingRect.height);
+    setWidth(boundingRect.width);
 
     return () => {
       window.removeEventListener('resize', setPositionFn);
@@ -57,13 +64,13 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
   const generateLeftStyles = (): string => {
     if (props.position === 'right') {
-      return `${right}px`;
+      return `calc(${left}px + ${width}px)`;
     }
     else if (props.position === 'top') {
       return `${left}px`;
     }
     else if (props.position === 'bottom') {
-      return `${left}px`;
+      return `${right - width}px`;
     }
     else {
       return undefined;
@@ -72,7 +79,7 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
   const generateTopStyles = (): string => {
     if (props.position === 'left') {
-      return `${top}px`;
+      return `${bottom - height}px`;
     }
     else if (props.position === 'right') {
       return `${top}px`;
@@ -88,16 +95,15 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
   const generateRightStyles = (): string => {
     if (props.position === 'left') {
-      return `${right}px`;
+      return `calc(100% - ${left}px)`;
     }
     else {
       return undefined;
     }
   };
 
-
   const generateBottomStyles = (): string => {
-    return props.position === 'top' ? `${bottom}px` : undefined;
+    return props.position === 'top' ? `calc(100% - ${top}px)` : undefined;
   };
 
   const popoverStyles = css`
@@ -112,11 +118,16 @@ const Popover: React.FC<PopoverProps> = (props) => {
     margin-left: ${props.position === 'right' ? '8px' : undefined};
     margin-right: ${props.position === 'left' ? '8px' : undefined};
     display: flex;
+    z-index: 123819223;
+  `;
+
+  const popoverContainerStyles = css`
+    width: fit-content;
   `;
 
   const bodyElement = document.getElementsByTagName('body')[0];
   return (
-    <div ref={childRef}>
+    <div className={cx(popoverContainerStyles, props.containerStyles)} ref={childRef}>
       {props.children}
       {
         DOM.createPortal(
