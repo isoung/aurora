@@ -24,10 +24,6 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
       0 0 0 1px ${colorTheme.light.base()};
     border-radius: 4px;
 
-    * {
-      cursor: ${active ? 'pointer' : null};
-    }
-
     div:first-of-type {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
