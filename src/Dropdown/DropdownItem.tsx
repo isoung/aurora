@@ -2,10 +2,10 @@ import { css, cx } from 'emotion';
 import React from 'react';
 
 import { ComponentStyleProps } from '../ComponentProps';
-import { Container } from '../Layout/Container/Container';
+import { Container, ContainerProps } from '../Layout/Container/Container';
 import { ThemeStore } from '../Theme/ThemeStore';
 
-interface DropdownItemProps extends ComponentStyleProps {
+interface DropdownItemProps extends ComponentStyleProps, ContainerProps {
   selected?: boolean;
   onSelection?: () => void;
   hoverable?: boolean;
@@ -14,29 +14,37 @@ const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
+  const {
+    styles,
+    selected,
+    onSelection,
+    hoverable,
+    ...containerProps
+  } = props;
+
   const dropdownItemStyles = css`
-    background-color: ${props.selected === true ? colorTheme.primary.base() : colorTheme.white.base()};
+    background-color: ${selected === true ? colorTheme.primary.base() : colorTheme.white.base()};
     padding: .5em 2rem .5rem 2rem;
 
     &:not(:hover) {
       * {
-        color: ${props.selected ? colorTheme.white.base() : null};
+        color: ${selected ? colorTheme.white.base() : null};
       }
     }
 
     &:hover {
-      background-color: ${props.hoverable === true ? colorTheme.light.base() : null};
+      background-color: ${hoverable === true ? colorTheme.light.base() : null};
     }
   `;
 
   const dropdownItemOnClick = () => {
-    if (props.onSelection) {
-      props.onSelection();
+    if (onSelection) {
+      onSelection();
     }
   };
 
   return (
-    <Container styles={cx(dropdownItemStyles, props.styles)} onClick={dropdownItemOnClick}>
+    <Container {...containerProps} styles={cx(dropdownItemStyles, styles)} onClick={dropdownItemOnClick}>
       {props.children}
     </Container>
   );

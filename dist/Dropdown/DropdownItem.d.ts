@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStyleProps } from '../ComponentProps';
-interface DropdownItemProps extends ComponentStyleProps {
+import { ContainerProps } from '../Layout/Container/Container';
+interface DropdownItemProps extends ComponentStyleProps, ContainerProps {
     selected?: boolean;
     onSelection?: () => void;
     hoverable?: boolean;
