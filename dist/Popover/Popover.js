@@ -58,20 +58,14 @@ var Popover = function (props) {
         else if (props.position === 'top') {
             return left + "px";
         }
-        else if (props.position === 'top-left') {
-            return left - width + "px";
-        }
         else if (props.position === 'top-right') {
-            return left + width / 2 + "px";
+            return left + width + "px";
         }
         else if (props.position === 'bottom') {
             return right - width + "px";
         }
         else if (props.position === 'bottom-right') {
-            return left + width / 2 + "px";
-        }
-        else if (props.position === 'bottom-left') {
-            return left - width + "px";
+            return left + width + "px";
         }
         else {
             return undefined;
@@ -95,6 +89,12 @@ var Popover = function (props) {
     };
     var generateRightStyles = function () {
         if (props.position === 'left') {
+            return "calc(100% - " + left + "px)";
+        }
+        else if (props.position === 'top-left') {
+            return "calc(100% - " + left + "px)";
+        }
+        else if (props.position === 'bottom-left') {
             return "calc(100% - " + left + "px)";
         }
         else {

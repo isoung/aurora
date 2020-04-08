@@ -37,6 +37,7 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
   useEffect(() => {
     const { current } = childRef;
+
     const setPositionFn = () => {
       const resizedBoundingRect = current.getBoundingClientRect();
       setTop(resizedBoundingRect.top);
@@ -67,16 +68,12 @@ const Popover: React.FC<PopoverProps> = (props) => {
       return `calc(${left}px + ${width}px)`;
     } else if (props.position === 'top') {
       return `${left}px`;
-    } else if (props.position === 'top-left') {
-      return `${left - width}px`;
     } else if (props.position === 'top-right') {
-      return `${left + width / 2}px`;
+      return `${left + width}px`;
     } else if (props.position === 'bottom') {
       return `${right - width}px`;
     } else if (props.position === 'bottom-right') {
-      return `${left + width / 2}px`;
-    } else if (props.position === 'bottom-left') {
-      return `${left - width}px`;
+      return `${left + width}px`;
     } else {
       return undefined;
     }
@@ -100,6 +97,10 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
   const generateRightStyles = (): string => {
     if (props.position === 'left') {
+      return `calc(100% - ${left}px)`;
+    } else if (props.position === 'top-left') {
+      return `calc(100% - ${left}px)`;
+    } else if (props.position === 'bottom-left') {
       return `calc(100% - ${left}px)`;
     } else {
       return undefined;
@@ -140,6 +141,7 @@ const Popover: React.FC<PopoverProps> = (props) => {
   `;
 
   const bodyElement = document.getElementsByTagName('body')[0];
+
   return (
     <div className={cx(popoverContainerStyles, props.containerStyles)} ref={childRef}>
       {props.children}
@@ -160,6 +162,7 @@ const Popover: React.FC<PopoverProps> = (props) => {
     </div>
   );
 };
+
 Popover.defaultProps = {
   position: 'top',
 };
