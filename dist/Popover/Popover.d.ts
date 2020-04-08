@@ -3,7 +3,7 @@ import { ActiveProps } from '../ActiveProps';
 import { ComponentStyleProps } from '../ComponentProps';
 export interface PopoverProps extends ActiveProps, ComponentStyleProps {
     content?: JSX.Element;
-    position?: 'left' | 'top' | 'right' | 'bottom';
+    position?: 'left' | 'right' | 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
     containerStyles?: string;
 }
 declare const Popover: React.FC<PopoverProps>;

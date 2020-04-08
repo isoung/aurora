@@ -58,8 +58,20 @@ var Popover = function (props) {
         else if (props.position === 'top') {
             return left + "px";
         }
+        else if (props.position === 'top-left') {
+            return left - width + "px";
+        }
+        else if (props.position === 'top-right') {
+            return left + width / 2 + "px";
+        }
         else if (props.position === 'bottom') {
             return right - width + "px";
+        }
+        else if (props.position === 'bottom-right') {
+            return left + width / 2 + "px";
+        }
+        else if (props.position === 'bottom-left') {
+            return left - width + "px";
         }
         else {
             return undefined;
@@ -72,7 +84,9 @@ var Popover = function (props) {
         else if (props.position === 'right') {
             return top + "px";
         }
-        else if (props.position === 'bottom') {
+        else if (props.position === 'bottom' ||
+            props.position === 'bottom-left' ||
+            props.position === 'bottom-right') {
             return bottom + "px";
         }
         else {
@@ -88,23 +102,34 @@ var Popover = function (props) {
         }
     };
     var generateBottomStyles = function () {
-        return props.position === 'top' ? "calc(100% - " + top + "px)" : undefined;
+        return props.position === 'top' || props.position === 'top-left' || props.position === 'top-right'
+            ? "calc(100% - " + top + "px)"
+            : undefined;
     };
-    var popoverStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    font-family: ", ";\n    position: absolute;\n    left: ", ";\n    top: ", ";\n    right: ", ";\n    bottom: ", ";\n    margin-bottom: ", ";\n    margin-top: ", ";\n    margin-left: ", ";\n    margin-right: ", ";\n    display: flex;\n    z-index: 123819223;\n  "], ["\n    font-family: ", ";\n    position: absolute;\n    left: ", ";\n    top: ", ";\n    right: ", ";\n    bottom: ", ";\n    margin-bottom: ", ";\n    margin-top: ", ";\n    margin-left: ", ";\n    margin-right: ", ";\n    display: flex;\n    z-index: 123819223;\n  "])), themeStore.getFontTheme().fontFamily, generateLeftStyles(), generateTopStyles(), generateRightStyles(), generateBottomStyles(), props.position === 'top' ? '8px' : undefined, props.position === 'bottom' ? '8px' : undefined, props.position === 'right' ? '8px' : undefined, props.position === 'left' ? '8px' : undefined);
+    var popoverStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    font-family: ", ";\n    position: absolute;\n    left: ", ";\n    top: ", ";\n    right: ", ";\n    bottom: ", ";\n    margin-bottom: ", ";\n    margin-top: ", ";\n    margin-left: ", ";\n    margin-right: ", ";\n    display: flex;\n    z-index: 123819223;\n  "], ["\n    font-family: ", ";\n    position: absolute;\n    left: ", ";\n    top: ", ";\n    right: ", ";\n    bottom: ", ";\n    margin-bottom: ",
+        ";\n    margin-top: ",
+        ";\n    margin-left: ", ";\n    margin-right: ", ";\n    display: flex;\n    z-index: 123819223;\n  "])), themeStore.getFontTheme().fontFamily, generateLeftStyles(), generateTopStyles(), generateRightStyles(), generateBottomStyles(), props.position === 'top' ||
+        props.position === 'top-left' ||
+        props.position === 'top-right'
+        ? '8px'
+        : undefined, props.position === 'bottom' ||
+        props.position === 'bottom-left' ||
+        props.position === 'bottom-right'
+        ? '8px'
+        : undefined, props.position === 'right' ? '8px' : undefined, props.position === 'left' ? '8px' : undefined);
     var popoverContainerStyles = emotion_1.css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    width: fit-content;\n  "], ["\n    width: fit-content;\n  "])));
     var bodyElement = document.getElementsByTagName('body')[0];
     return (react_1.default.createElement("div", { className: emotion_1.cx(popoverContainerStyles, props.containerStyles), ref: childRef },
         props.children,
-        react_dom_1.default.createPortal((props.active ?
-            (react_1.default.createElement(ThemeStore_1.ThemeStore.Provider, { initialState: {
-                    colorTheme: themeStore.getColorTheme(),
-                    fontTheme: themeStore.getFontTheme()
-                } },
-                react_1.default.createElement(EntranceAnimation_1.EntranceAnimation, { hiddenScale: .9, visibleDelay: .05, styles: emotion_1.cx(popoverStyles, props.styles) }, props.content))) : null), bodyElement)));
+        react_dom_1.default.createPortal(props.active ? (react_1.default.createElement(ThemeStore_1.ThemeStore.Provider, { initialState: {
+                colorTheme: themeStore.getColorTheme(),
+                fontTheme: themeStore.getFontTheme(),
+            } },
+            react_1.default.createElement(EntranceAnimation_1.EntranceAnimation, { hiddenScale: 0.9, visibleDelay: 0.05, styles: emotion_1.cx(popoverStyles, props.styles) }, props.content))) : null, bodyElement)));
 };
 exports.Popover = Popover;
 Popover.defaultProps = {
-    position: 'top'
+    position: 'top',
 };
 var templateObject_1, templateObject_2;
 //# sourceMappingURL=Popover.js.map
