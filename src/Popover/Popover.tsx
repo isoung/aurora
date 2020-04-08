@@ -68,12 +68,12 @@ const Popover: React.FC<PopoverProps> = (props) => {
       return `calc(${left}px + ${width}px)`;
     } else if (props.position === 'top') {
       return `${left}px`;
-    } else if (props.position === 'top-right') {
-      return `${left + width}px`;
+    } else if (props.position === 'top-left') {
+      return `calc(100% - ${right}px)`;
     } else if (props.position === 'bottom') {
       return `${right - width}px`;
-    } else if (props.position === 'bottom-right') {
-      return `${left + width}px`;
+    } else if (props.position === 'bottom-left') {
+      return `calc(100% - ${right}px)`;
     } else {
       return undefined;
     }
@@ -98,10 +98,10 @@ const Popover: React.FC<PopoverProps> = (props) => {
   const generateRightStyles = (): string => {
     if (props.position === 'left') {
       return `calc(100% - ${left}px)`;
-    } else if (props.position === 'top-left') {
-      return `calc(100% - ${left}px)`;
-    } else if (props.position === 'bottom-left') {
-      return `calc(100% - ${left}px)`;
+    } else if (props.position === 'top-right') {
+      return `calc(100% - ${right}px)`;
+    } else if (props.position === 'bottom-right') {
+      return `calc(100% - ${right}px)`;
     } else {
       return undefined;
     }

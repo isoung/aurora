@@ -48,6 +48,28 @@ storiesOf('Popover', module)
       </Aurora>
     );
   })
+  .add('bottom', () => {
+    const [active, setActive] = useState(false);
+
+    return (
+      <Aurora>
+        <Popover
+          active={active}
+          position='bottom'
+          content={
+            <React.Fragment>
+              <Tile variant='white' styles={tileStyles}>
+                <Text>Popover</Text>
+              </Tile>
+            </React.Fragment>
+          }>
+          <Button onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
+            Hover for popover
+          </Button>
+        </Popover>
+      </Aurora>
+    );
+  })
   .add('bottom-left', () => {
     const [active, setActive] = useState(false);
 
