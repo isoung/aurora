@@ -20,9 +20,10 @@ interface DOMRect {
 
 export interface PopoverProps extends ActiveProps, ComponentStyleProps {
   content?: JSX.Element;
-  position?: 'left' | 'top' | 'right' | 'bottom';
+  position?: 'left' | 'right' | 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
   containerStyles?: string;
 }
+
 const Popover: React.FC<PopoverProps> = (props) => {
   const [height, setHeight] = useState(null);
   const [width, setWidth] = useState(null);
@@ -36,7 +37,6 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
   useEffect(() => {
     const { current } = childRef;
-
     const setPositionFn = () => {
       const resizedBoundingRect = current.getBoundingClientRect();
       setTop(resizedBoundingRect.top);
@@ -65,14 +65,19 @@ const Popover: React.FC<PopoverProps> = (props) => {
   const generateLeftStyles = (): string => {
     if (props.position === 'right') {
       return `calc(${left}px + ${width}px)`;
-    }
-    else if (props.position === 'top') {
+    } else if (props.position === 'top') {
       return `${left}px`;
-    }
-    else if (props.position === 'bottom') {
+    } else if (props.position === 'top-left') {
+      return `${left - width}px`;
+    } else if (props.position === 'top-right') {
+      return `${left + width / 2}px`;
+    } else if (props.position === 'bottom') {
       return `${right - width}px`;
-    }
-    else {
+    } else if (props.position === 'bottom-right') {
+      return `${left + width / 2}px`;
+    } else if (props.position === 'bottom-left') {
+      return `${left - width}px`;
+    } else {
       return undefined;
     }
   };
@@ -80,30 +85,31 @@ const Popover: React.FC<PopoverProps> = (props) => {
   const generateTopStyles = (): string => {
     if (props.position === 'left') {
       return `${bottom - height}px`;
-    }
-    else if (props.position === 'right') {
+    } else if (props.position === 'right') {
       return `${top}px`;
-    }
-    else if (props.position === 'bottom') {
+    } else if (
+      props.position === 'bottom' ||
+      props.position === 'bottom-left' ||
+      props.position === 'bottom-right'
+    ) {
       return `${bottom}px`;
-    }
-    else {
+    } else {
       return undefined;
     }
   };
 
-
   const generateRightStyles = (): string => {
     if (props.position === 'left') {
       return `calc(100% - ${left}px)`;
-    }
-    else {
+    } else {
       return undefined;
     }
   };
 
   const generateBottomStyles = (): string => {
-    return props.position === 'top' ? `calc(100% - ${top}px)` : undefined;
+    return props.position === 'top' || props.position === 'top-left' || props.position === 'top-right'
+      ? `calc(100% - ${top}px)`
+      : undefined;
   };
 
   const popoverStyles = css`
@@ -113,8 +119,16 @@ const Popover: React.FC<PopoverProps> = (props) => {
     top: ${generateTopStyles()};
     right: ${generateRightStyles()};
     bottom: ${generateBottomStyles()};
-    margin-bottom: ${props.position === 'top' ? '8px' : undefined};
-    margin-top: ${props.position === 'bottom' ? '8px' : undefined};
+    margin-bottom: ${props.position === 'top' ||
+    props.position === 'top-left' ||
+    props.position === 'top-right'
+      ? '8px'
+      : undefined};
+    margin-top: ${props.position === 'bottom' ||
+    props.position === 'bottom-left' ||
+    props.position === 'bottom-right'
+      ? '8px'
+      : undefined};
     margin-left: ${props.position === 'right' ? '8px' : undefined};
     margin-right: ${props.position === 'left' ? '8px' : undefined};
     display: flex;
@@ -129,35 +143,25 @@ const Popover: React.FC<PopoverProps> = (props) => {
   return (
     <div className={cx(popoverContainerStyles, props.containerStyles)} ref={childRef}>
       {props.children}
-      {
-        DOM.createPortal(
-          (
-            props.active ?
-            (
-              <ThemeStore.Provider initialState={{
-                colorTheme: themeStore.getColorTheme(),
-                fontTheme: themeStore.getFontTheme()
-              }}>
-                <EntranceAnimation
-                  hiddenScale={.9}
-                  visibleDelay={.05}
-                  styles={cx(popoverStyles, props.styles)}
-                >
-                  {props.content}
-                </EntranceAnimation>
-              </ThemeStore.Provider>
-            ) : null
-          ),
-          bodyElement
-        )
-      }
+      {DOM.createPortal(
+        props.active ? (
+          <ThemeStore.Provider
+            initialState={{
+              colorTheme: themeStore.getColorTheme(),
+              fontTheme: themeStore.getFontTheme(),
+            }}>
+            <EntranceAnimation hiddenScale={0.9} visibleDelay={0.05} styles={cx(popoverStyles, props.styles)}>
+              {props.content}
+            </EntranceAnimation>
+          </ThemeStore.Provider>
+        ) : null,
+        bodyElement
+      )}
     </div>
   );
 };
 Popover.defaultProps = {
-  position: 'top'
+  position: 'top',
 };
 
-export {
-  Popover
-};
+export { Popover };
