@@ -3,6 +3,7 @@ import { FontTheme } from './Theme/Font/FontTheme';
 export interface ComponentStyleProps {
     styles?: string;
     ref?: any;
+    id?: string;
 }
 export interface ComponentProps extends ComponentStyleProps {
     variant?: ColorThemeSelectionTypes;
