@@ -47,7 +47,7 @@ export const defaultColorTheme: ColorTheme = {
     darker: () => Color(defaultColorTheme.danger.base()).darken(.3).toString()
   },
   success: {
-    base: () => Color('#00b262').toString(),
+    base: () => Color('#37BB9E').toString(),
     light: () => Color(defaultColorTheme.success.base()).lighten(.15).toString(),
     lighter: () => Color(defaultColorTheme.success.base()).lighten(.3).toString(),
     dark: () => Color(defaultColorTheme.success.base()).darken(.15).toString(),
@@ -61,7 +61,7 @@ export const defaultColorTheme: ColorTheme = {
     darker: () => Color(defaultColorTheme.success.base()).darken(.3).toString()
   },
   info: {
-    base: () => Color('#3B3E51').toString(),
+    base: () => Color('#878BA4').toString(),
     light: () => Color(defaultColorTheme.info.base()).lighten(.15).toString(),
     lighter: () => Color(defaultColorTheme.info.base()).lighten(.3).toString(),
     dark: () => Color(defaultColorTheme.info.base()).darken(.15).toString(),
