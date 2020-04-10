@@ -27,7 +27,7 @@ exports.defaultColorTheme = {
         darker: function () { return color_1.default(exports.defaultColorTheme.danger.base()).darken(.3).toString(); }
     },
     success: {
-        base: function () { return color_1.default('#00b262').toString(); },
+        base: function () { return color_1.default('#37BB9E').toString(); },
         light: function () { return color_1.default(exports.defaultColorTheme.success.base()).lighten(.15).toString(); },
         lighter: function () { return color_1.default(exports.defaultColorTheme.success.base()).lighten(.3).toString(); },
         dark: function () { return color_1.default(exports.defaultColorTheme.success.base()).darken(.15).toString(); },
@@ -41,7 +41,7 @@ exports.defaultColorTheme = {
         darker: function () { return color_1.default(exports.defaultColorTheme.success.base()).darken(.3).toString(); }
     },
     info: {
-        base: function () { return color_1.default('#3B3E51').toString(); },
+        base: function () { return color_1.default('#878BA4').toString(); },
         light: function () { return color_1.default(exports.defaultColorTheme.info.base()).lighten(.15).toString(); },
         lighter: function () { return color_1.default(exports.defaultColorTheme.info.base()).lighten(.3).toString(); },
         dark: function () { return color_1.default(exports.defaultColorTheme.info.base()).darken(.15).toString(); },

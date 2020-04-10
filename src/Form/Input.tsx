@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = props => {
   const themeStore = ThemeStore.useContainer();
   const colorTheme = themeStore.getColorTheme();
 
-  const { variant, styles, hasIconLeft, hasIconRight, hasAddonRight, ...inputProps } = props;
+  const { variant, styles, hasIconLeft, hasIconRight, hasAddonRight, disabled, ...inputProps } = props;
 
   const inputStyles = css`
     background-color: ${colorTheme.light.base()};
@@ -33,7 +33,7 @@ const Input: React.FC<InputProps> = props => {
     transition: border-color 50ms ease-in-out, box-shadow 100ms ease-in-out;
 
     &::placeholder {
-      color: ${colorTheme.dark.light()};
+      color: ${colorTheme.dark.base()};
     }
 
     &:focus {
@@ -51,7 +51,17 @@ const Input: React.FC<InputProps> = props => {
     }
   `;
 
-  return <input {...inputProps} className={cx(inputStyles, styles)} />;
+  const disabledStyles = css`
+    cursor: not-allowed;
+  `;
+
+  return (
+    <input
+      {...inputProps}
+      disabled={disabled}
+      className={cx(inputStyles, disabled ? disabledStyles : null, styles)}
+    />
+  );
 };
 Input.defaultProps = {
   variant: 'primary'
