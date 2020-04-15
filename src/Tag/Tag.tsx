@@ -56,6 +56,8 @@ const Tag: React.FC<TagProps> = (props) => {
     padding-bottom: 2px;
     padding-left: 6px;
     padding-right: 6px;
+    display: flex;
+    align-items: center;
   `;
 
   return (
