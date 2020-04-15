@@ -22,6 +22,14 @@ export interface PopoverProps extends ActiveProps, ComponentStyleProps {
   content?: JSX.Element;
   position?: 'left' | 'right' | 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
   containerStyles?: string;
+  paddingTop?: number;
+  paddingBottom?: number;
+  paddingLeft?: number;
+  paddingRight?: number;
+  marginTop?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
 }
 
 const Popover: React.FC<PopoverProps> = (props) => {
@@ -55,8 +63,20 @@ const Popover: React.FC<PopoverProps> = (props) => {
     setLeft(boundingRect.left);
     setBottom(boundingRect.bottom);
     setRight(boundingRect.right);
-    setHeight(boundingRect.height);
-    setWidth(boundingRect.width);
+    setHeight(
+      boundingRect.height
+      + props.marginTop
+      + props.marginBottom
+      + props.paddingTop
+      + props.paddingBottom
+    );
+    setWidth(
+      boundingRect.width
+      + props.marginLeft
+      + props.marginRight
+      + props.paddingLeft
+      + props.paddingRight
+    );
 
     return () => {
       window.removeEventListener('resize', setPositionFn);
@@ -165,6 +185,14 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
 Popover.defaultProps = {
   position: 'top',
+  paddingBottom: 0,
+  paddingTop: 0,
+  paddingRight: 0,
+  paddingLeft: 0,
+  marginBottom: 0,
+  marginTop: 0,
+  marginRight: 0,
+  marginLeft: 0
 };
 
 export { Popover };

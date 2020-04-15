@@ -45,8 +45,16 @@ var Popover = function (props) {
         setLeft(boundingRect.left);
         setBottom(boundingRect.bottom);
         setRight(boundingRect.right);
-        setHeight(boundingRect.height);
-        setWidth(boundingRect.width);
+        setHeight(boundingRect.height
+            + props.marginTop
+            + props.marginBottom
+            + props.paddingTop
+            + props.paddingBottom);
+        setWidth(boundingRect.width
+            + props.marginLeft
+            + props.marginRight
+            + props.paddingLeft
+            + props.paddingRight);
         return function () {
             window.removeEventListener('resize', setPositionFn);
         };
@@ -130,6 +138,14 @@ var Popover = function (props) {
 exports.Popover = Popover;
 Popover.defaultProps = {
     position: 'top',
+    paddingBottom: 0,
+    paddingTop: 0,
+    paddingRight: 0,
+    paddingLeft: 0,
+    marginBottom: 0,
+    marginTop: 0,
+    marginRight: 0,
+    marginLeft: 0
 };
 var templateObject_1, templateObject_2;
 //# sourceMappingURL=Popover.js.map
