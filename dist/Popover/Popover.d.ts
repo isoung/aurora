@@ -7,6 +7,7 @@ export interface PopoverProps extends ActiveProps, ComponentStyleProps {
     content?: JSX.Element;
     position?: Placement;
     offset?: number;
+    slidingOffset?: number;
 }
 declare const Popover: React.FC<PopoverProps>;
 export { Popover };

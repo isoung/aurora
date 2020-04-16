@@ -36,7 +36,7 @@ var Popover = function (props) {
             {
                 name: 'offset',
                 options: {
-                    offset: [0, 8],
+                    offset: [props.slidingOffset, props.offset],
                 },
             }
         ],
@@ -57,6 +57,7 @@ var Popover = function (props) {
 exports.Popover = Popover;
 Popover.defaultProps = {
     position: 'auto',
-    offset: 0
+    offset: 8,
+    slidingOffset: 0
 };
 //# sourceMappingURL=Popover.js.map

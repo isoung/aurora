@@ -13,6 +13,7 @@ export interface PopoverProps extends ActiveProps, ComponentStyleProps {
   content?: JSX.Element;
   position?: Placement;
   offset?: number;
+  slidingOffset?: number;
 }
 
 const Popover: React.FC<PopoverProps> = (props) => {
@@ -26,7 +27,7 @@ const Popover: React.FC<PopoverProps> = (props) => {
       {
         name: 'offset',
         options: {
-          offset: [0, 8],
+          offset: [props.slidingOffset, props.offset],
         },
       }
     ],
@@ -63,7 +64,8 @@ const Popover: React.FC<PopoverProps> = (props) => {
 
 Popover.defaultProps = {
   position: 'auto',
-  offset: 0
+  offset: 8,
+  slidingOffset: 0
 };
 
 export { Popover };
