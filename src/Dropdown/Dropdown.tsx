@@ -1,6 +1,7 @@
 import { css, cx } from 'emotion';
 import React from 'react';
 
+import { EntranceAnimation } from '../Animation/EntranceAnimation';
 import { ComponentStyleProps } from '../ComponentProps';
 import { Popover, PopoverProps } from '../Popover/Popover';
 import { ThemeStore } from '../Theme/ThemeStore';
@@ -59,9 +60,9 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
         {...popoverProps}
         active={active}
         content={
-          <div className={cx(dropdownStyles, styles)}>
+          <EntranceAnimation styles={cx(dropdownStyles, styles)}>
             {content}
-          </div>
+          </EntranceAnimation>
         }
       >
         {props.children}
@@ -74,7 +75,6 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
   );
 };
 Dropdown.defaultProps = {
-  position: 'right'
 };
 
 export {

@@ -31,6 +31,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = require("emotion");
 var react_1 = __importDefault(require("react"));
+var EntranceAnimation_1 = require("../Animation/EntranceAnimation");
 var Popover_1 = require("../Popover/Popover");
 var ThemeStore_1 = require("../Theme/ThemeStore");
 var Dropdown = function (props) {
@@ -45,13 +46,11 @@ var Dropdown = function (props) {
         }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(Popover_1.Popover, __assign({}, popoverProps, { active: active, content: react_1.default.createElement("div", { className: emotion_1.cx(dropdownStyles, styles) }, content) }), props.children),
+        react_1.default.createElement(Popover_1.Popover, __assign({}, popoverProps, { active: active, content: react_1.default.createElement(EntranceAnimation_1.EntranceAnimation, { styles: emotion_1.cx(dropdownStyles, styles) }, content) }), props.children),
         active &&
             react_1.default.createElement("div", { className: dropdownOverlayStyles, onClick: dropdownOverlayClick })));
 };
 exports.Dropdown = Dropdown;
-Dropdown.defaultProps = {
-    position: 'right'
-};
+Dropdown.defaultProps = {};
 var templateObject_1, templateObject_2;
 //# sourceMappingURL=Dropdown.js.map

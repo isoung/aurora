@@ -6,6 +6,6 @@ export interface Notification {
 }
 export declare const NotificationStore: import("unstated-next").Container<{
     getNotifications: () => Notification[];
-    createNotification: (text: string, variant?: "success" | "black" | "gray" | "white" | "dark" | "light" | "primary" | "secondary" | "danger" | "warning" | "info") => void;
+    createNotification: (text: string, variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "dark" | "gray" | "light" | "white" | "black") => void;
     removeNotification: (id: string) => void;
 }, any>;

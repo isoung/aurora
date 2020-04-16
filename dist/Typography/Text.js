@@ -25,7 +25,7 @@ var Text = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var colorTheme = themeStore.getColorTheme();
     var fontTheme = themeStore.getFontTheme();
-    var textStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n  "], ["\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n  "])), fontTheme[props.size], props.weight, colorTheme[props.variant].base());
+    var textStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    font-family: ", ";\n  "], ["\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    font-family: ", ";\n  "])), fontTheme[props.size], props.weight, colorTheme[props.variant].base(), fontTheme.fontFamily);
     return react_1.default.createElement(props.tag, __assign(__assign({}, props), { className: emotion_1.cx(textStyles, props.styles) }), props.children);
 };
 exports.Text = Text;

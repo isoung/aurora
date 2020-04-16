@@ -1,169 +1,43 @@
-import { css, cx } from 'emotion';
-import React, { useEffect, useRef, useState } from 'react';
+import { cx } from 'emotion';
+import { Placement } from 'popper.js';
+import React, { useState } from 'react';
 import DOM from 'react-dom';
+import { usePopper } from 'react-popper';
 
 import { ActiveProps } from '../ActiveProps';
-import { EntranceAnimation } from '../Animation/EntranceAnimation';
 import { ComponentStyleProps } from '../ComponentProps';
 import { ThemeStore } from '../Theme/ThemeStore';
 
-interface DOMRect {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  top: number;
-  right: number;
-  bottom: number;
-  left: number;
-}
-
 export interface PopoverProps extends ActiveProps, ComponentStyleProps {
-  content?: JSX.Element;
-  position?: 'left' | 'right' | 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
   containerStyles?: string;
-  paddingTop?: number;
-  paddingBottom?: number;
-  paddingLeft?: number;
-  paddingRight?: number;
-  marginTop?: number;
-  marginBottom?: number;
-  marginLeft?: number;
-  marginRight?: number;
+  content?: JSX.Element;
+  position?: Placement;
+  offset?: number;
 }
 
 const Popover: React.FC<PopoverProps> = (props) => {
-  const [height, setHeight] = useState(null);
-  const [width, setWidth] = useState(null);
-  const [left, setLeft] = useState(null);
-  const [top, setTop] = useState(null);
-  const [right, setRight] = useState(null);
-  const [bottom, setBottom] = useState(null);
-  const childRef = useRef(null);
+  const [referenceElement, setReferenceElement] = useState(null);
+  const [popperElement, setPopperElement] = useState(null);
+  const [arrowElement, setArrowElement] = useState(null);
 
-  const themeStore = ThemeStore.useContainer();
-
-  useEffect(() => {
-    const { current } = childRef;
-
-    const setPositionFn = () => {
-      const resizedBoundingRect = current.getBoundingClientRect();
-      setTop(resizedBoundingRect.top);
-      setLeft(resizedBoundingRect.left);
-      setBottom(resizedBoundingRect.bottom);
-      setRight(resizedBoundingRect.right);
-      setHeight(resizedBoundingRect.height);
-      setWidth(resizedBoundingRect.width);
-    };
-
-    window.addEventListener('resize', setPositionFn);
-
-    const boundingRect: DOMRect = current.getBoundingClientRect();
-    setTop(boundingRect.top);
-    setLeft(boundingRect.left);
-    setBottom(boundingRect.bottom);
-    setRight(boundingRect.right);
-    setHeight(
-      boundingRect.height
-      + props.marginTop
-      + props.marginBottom
-      + props.paddingTop
-      + props.paddingBottom
-    );
-    setWidth(
-      boundingRect.width
-      + props.marginLeft
-      + props.marginRight
-      + props.paddingLeft
-      + props.paddingRight
-    );
-
-    return () => {
-      window.removeEventListener('resize', setPositionFn);
-    };
+  const { styles, attributes } = usePopper(referenceElement, popperElement, {
+    modifiers: [
+      { name: 'arrow', options: { element: arrowElement } },
+      {
+        name: 'offset',
+        options: {
+          offset: [0, 8],
+        },
+      }
+    ],
+    placement: props.position
   });
 
-  const generateLeftStyles = (): string => {
-    if (props.position === 'right') {
-      return `calc(${left}px + ${width}px)`;
-    } else if (props.position === 'top') {
-      return `${left}px`;
-    } else if (props.position === 'top-left') {
-      return `calc(100% - ${right}px)`;
-    } else if (props.position === 'bottom') {
-      return `${right - width}px`;
-    } else if (props.position === 'bottom-left') {
-      return `calc(100% - ${right}px)`;
-    } else {
-      return undefined;
-    }
-  };
-
-  const generateTopStyles = (): string => {
-    if (props.position === 'left') {
-      return `${bottom - height}px`;
-    } else if (props.position === 'right') {
-      return `${top}px`;
-    } else if (
-      props.position === 'bottom' ||
-      props.position === 'bottom-left' ||
-      props.position === 'bottom-right'
-    ) {
-      return `${bottom}px`;
-    } else {
-      return undefined;
-    }
-  };
-
-  const generateRightStyles = (): string => {
-    if (props.position === 'left') {
-      return `calc(100% - ${left}px)`;
-    } else if (props.position === 'top-right') {
-      return `calc(100% - ${right}px)`;
-    } else if (props.position === 'bottom-right') {
-      return `calc(100% - ${right}px)`;
-    } else {
-      return undefined;
-    }
-  };
-
-  const generateBottomStyles = (): string => {
-    return props.position === 'top' || props.position === 'top-left' || props.position === 'top-right'
-      ? `calc(100% - ${top}px)`
-      : undefined;
-  };
-
-  const popoverStyles = css`
-    font-family: ${themeStore.getFontTheme().fontFamily};
-    position: absolute;
-    left: ${generateLeftStyles()};
-    top: ${generateTopStyles()};
-    right: ${generateRightStyles()};
-    bottom: ${generateBottomStyles()};
-    margin-bottom: ${props.position === 'top' ||
-    props.position === 'top-left' ||
-    props.position === 'top-right'
-      ? '8px'
-      : undefined};
-    margin-top: ${props.position === 'bottom' ||
-    props.position === 'bottom-left' ||
-    props.position === 'bottom-right'
-      ? '8px'
-      : undefined};
-    margin-left: ${props.position === 'right' ? '8px' : undefined};
-    margin-right: ${props.position === 'left' ? '8px' : undefined};
-    display: flex;
-    z-index: 123819223;
-  `;
-
-  const popoverContainerStyles = css`
-    width: fit-content;
-  `;
-
+  const themeStore = ThemeStore.useContainer();
   const bodyElement = document.getElementsByTagName('body')[0];
 
   return (
-    <div className={cx(popoverContainerStyles, props.containerStyles)} ref={childRef}>
+    <div className={cx(props.containerStyles)} ref={setReferenceElement}>
       {props.children}
       {DOM.createPortal(
         props.active ? (
@@ -172,9 +46,13 @@ const Popover: React.FC<PopoverProps> = (props) => {
               colorTheme: themeStore.getColorTheme(),
               fontTheme: themeStore.getFontTheme(),
             }}>
-            <EntranceAnimation hiddenScale={0.9} visibleDelay={0.05} styles={cx(popoverStyles, props.styles)}>
+            <div
+              ref={setPopperElement}
+              style={styles.popper} {...attributes.popper}
+            >
               {props.content}
-            </EntranceAnimation>
+              <div ref={setArrowElement} style={styles.arrow}/>
+            </div>
           </ThemeStore.Provider>
         ) : null,
         bodyElement
@@ -184,15 +62,8 @@ const Popover: React.FC<PopoverProps> = (props) => {
 };
 
 Popover.defaultProps = {
-  position: 'top',
-  paddingBottom: 0,
-  paddingTop: 0,
-  paddingRight: 0,
-  paddingLeft: 0,
-  marginBottom: 0,
-  marginTop: 0,
-  marginRight: 0,
-  marginLeft: 0
+  position: 'auto',
+  offset: 0
 };
 
 export { Popover };

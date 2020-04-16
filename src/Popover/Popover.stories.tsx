@@ -1,6 +1,7 @@
 import centered from '@storybook/addon-centered/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
+import { Placement } from 'popper.js';
 import React, { useState } from 'react';
 
 import { css } from 'emotion';
@@ -29,147 +30,34 @@ storiesOf('Popover', module)
   })
   .add('default', () => {
     const [active, setActive] = useState(false);
+    const placementOptions = [
+      'auto-start',
+      'auto',
+      'top',
+      'top-start',
+      'top-end',
+      'bottom',
+      'bottom-start',
+      'bottom-end',
+      'right',
+      'right-start',
+      'right-end',
+      'left',
+      'left-start',
+      'left-end'
+    ];
+
+    const selectOptions = select('position', placementOptions, 'auto');
 
     return (
       <Aurora>
         <Popover
+          position={selectOptions as Placement}
           active={active}
           content={
             <React.Fragment>
-              <Tile variant='white' styles={tileStyles}>
-                <Text>Popover</Text>
-              </Tile>
-            </React.Fragment>
-          }>
-          <Button onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
-            Hover for popover
-          </Button>
-        </Popover>
-      </Aurora>
-    );
-  })
-  .add('bottom', () => {
-    const [active, setActive] = useState(false);
-
-    return (
-      <Aurora>
-        <Popover
-          active={active}
-          position='bottom'
-          content={
-            <React.Fragment>
-              <Tile variant='white' styles={tileStyles}>
-                <Text>Popover</Text>
-              </Tile>
-            </React.Fragment>
-          }>
-          <Button onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
-            Hover for popover
-          </Button>
-        </Popover>
-      </Aurora>
-    );
-  })
-  .add('bottom-left', () => {
-    const [active, setActive] = useState(false);
-
-    return (
-      <Aurora>
-        <Popover
-          active={active}
-          position='bottom-left'
-          content={
-            <React.Fragment>
-              <Tile variant='white' styles={tileStyles}>
-                <Text>Popover</Text>
-              </Tile>
-            </React.Fragment>
-          }>
-          <Button onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
-            Hover for popover
-          </Button>
-        </Popover>
-      </Aurora>
-    );
-  })
-  .add('bottom-right', () => {
-    const [active, setActive] = useState(false);
-
-    return (
-      <Aurora>
-        <Popover
-          active={active}
-          position='bottom-right'
-          content={
-            <React.Fragment>
-              <Tile variant='white' styles={tileStyles}>
-                <Text>Popover</Text>
-              </Tile>
-            </React.Fragment>
-          }>
-          <Button onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
-            Hover for popover
-          </Button>
-        </Popover>
-      </Aurora>
-    );
-  })
-  .add('top', () => {
-    const [active, setActive] = useState(false);
-
-    return (
-      <Aurora>
-        <Popover
-          active={active}
-          position='top'
-          content={
-            <React.Fragment>
-              <Tile variant='white' styles={tileStyles}>
-                <Text>Popover</Text>
-              </Tile>
-            </React.Fragment>
-          }>
-          <Button onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
-            Hover for popover
-          </Button>
-        </Popover>
-      </Aurora>
-    );
-  })
-  .add('top-right', () => {
-    const [active, setActive] = useState(false);
-
-    return (
-      <Aurora>
-        <Popover
-          active={active}
-          position='top-right'
-          content={
-            <React.Fragment>
-              <Tile variant='white' styles={tileStyles}>
-                <Text>Popover</Text>
-              </Tile>
-            </React.Fragment>
-          }>
-          <Button onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)}>
-            Hover for popover
-          </Button>
-        </Popover>
-      </Aurora>
-    );
-  })
-  .add('top-left', () => {
-    const [active, setActive] = useState(false);
-
-    return (
-      <Aurora>
-        <Popover
-          active={active}
-          position='top-left'
-          content={
-            <React.Fragment>
-              <Tile variant='white' styles={tileStyles}>
-                <Text>Popover</Text>
+              <Tile variant='primary' styles={tileStyles}>
+                <Text variant='white'>Popover</Text>
               </Tile>
             </React.Fragment>
           }>

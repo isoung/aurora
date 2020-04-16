@@ -17,6 +17,7 @@ const Text: React.FC<TextProps> = (props) => {
     font-size: ${fontTheme[props.size]};
     font-weight: ${props.weight};
     color: ${colorTheme[props.variant].base()};
+    font-family: ${fontTheme.fontFamily};
   `;
 
   return React.createElement(props.tag, {...props, ...{ className: cx(textStyles, props.styles) }}, props.children);

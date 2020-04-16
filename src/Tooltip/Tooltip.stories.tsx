@@ -1,8 +1,9 @@
 import centered from '@storybook/addon-centered/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { css } from 'emotion';
 import React, { useState } from 'react';
+import { Placement } from '@popperjs/core';
 
 import { Aurora } from '../Aurora';
 import { Button } from '../Button/Button';
@@ -22,10 +23,28 @@ storiesOf('Tooltip', module)
   })
   .add('basics', () => {
     const [active, setActive] = useState(false);
+    const placementOptions = [
+      'auto-start',
+      'auto',
+      'top',
+      'top-start',
+      'top-end',
+      'bottom',
+      'bottom-start',
+      'bottom-end',
+      'right',
+      'right-start',
+      'right-end',
+      'left',
+      'left-start',
+      'left-end'
+    ];
+
+    const selectOptions = select('position', placementOptions, 'auto');
 
     return (
       <Aurora>
-        <Tooltip active={active} variant='info' content={
+        <Tooltip position={selectOptions as Placement} active={active} variant='info' content={
           <div className={css`width: 300px;`}>
             <Title size='medium' variant='white' styles={css`margin: 0;`}>Tooltip</Title>
             <Text tag='span' variant='white'>
