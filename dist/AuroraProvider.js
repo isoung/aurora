@@ -13,7 +13,7 @@ var ThemeStore_1 = require("./Theme/ThemeStore");
 var AuroraProvider = function (props) {
     var themeStore = ThemeStore_1.ThemeStore.useContainer();
     var fontTheme = themeStore.getFontTheme();
-    var auroraProviderStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    :nth-child(1n) *:not(i):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(span) {\n      font-family: ", ";\n      font-size: ", ";\n    }\n  "], ["\n    :nth-child(1n) *:not(i):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(span) {\n      font-family: ", ";\n      font-size: ", ";\n    }\n  "])), fontTheme.fontFamily, fontTheme.normal);
+    var auroraProviderStyles = emotion_1.css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    :nth-child(1n) *:not(i):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(span):not(text) {\n      font-family: ", ";\n      font-size: ", ";\n    }\n  "], ["\n    :nth-child(1n) *:not(i):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(span):not(text) {\n      font-family: ", ";\n      font-size: ", ";\n    }\n  "])), fontTheme.fontFamily, fontTheme.normal);
     return (react_1.default.createElement("div", { className: auroraProviderStyles, id: 'aurora' }, props.children));
 };
 exports.AuroraProvider = AuroraProvider;
