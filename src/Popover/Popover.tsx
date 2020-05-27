@@ -1,5 +1,5 @@
+import { Placement } from '@popperjs/core';
 import { cx } from 'emotion';
-import { Placement } from 'popper.js';
 import React, { useState } from 'react';
 import DOM from 'react-dom';
 import { usePopper } from 'react-popper';

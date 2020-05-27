@@ -1,4 +1,4 @@
-import { Placement } from 'popper.js';
+import { Placement } from '@popperjs/core';
 import React from 'react';
 import { ActiveProps } from '../ActiveProps';
 import { ComponentStyleProps } from '../ComponentProps';
