@@ -28,7 +28,13 @@ storiesOf('Progress Bars', module)
     return (
       <Aurora>
         <div className={containerStyles}>
-          <ProgressBar variant={variant} rounded={boolean('rounded', false)} value={15} max={100}/>
+          <ProgressBar
+            variant={variant}
+            rounded={boolean('rounded', false)}
+            animated={boolean('animated', false)}
+            value={15}
+            max={100}
+          />
         </div>
       </Aurora>
     );

@@ -1,4 +1,5 @@
 import { css, cx } from 'emotion';
+import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
 import { ComponentProps } from '../ComponentProps';
@@ -8,6 +9,7 @@ interface ProgressBarProps extends ComponentProps {
   rounded?: boolean;
   value: number;
   max: number;
+  animated?: boolean;
 }
 const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
   const themeStore = ThemeStore.useContainer();
@@ -27,15 +29,34 @@ const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
     width: ${props.value.toString()}%;
   `;
 
+  const variants: Variants = {
+    hidden: {
+      width: 0
+    },
+    visible: {
+      width: `${props.value.toString()}%`
+    }
+  };
+
   return (
     <div className={cx(progressBarStyles, props.styles)}>
-      <div className={innerProgressBarStyles}/>
+      {
+        props.animated ?
+        <motion.div
+          className={innerProgressBarStyles}
+          initial='hidden'
+          animate='visible'
+          variants={variants}
+        /> :
+        <div className={innerProgressBarStyles}/>
+      }
     </div>
   );
 });
 ProgressBar.defaultProps = {
   variant: 'primary',
-  rounded: false
+  rounded: false,
+  animated: false
 };
 
 export {
