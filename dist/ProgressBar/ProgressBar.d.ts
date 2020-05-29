@@ -5,6 +5,7 @@ interface ProgressBarProps extends ComponentProps {
     value: number;
     max: number;
     animated?: boolean;
+    withText?: boolean;
 }
 declare const ProgressBar: React.FC<ProgressBarProps>;
 export { ProgressBar };

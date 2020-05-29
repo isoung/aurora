@@ -3,13 +3,16 @@ import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
 import { ComponentProps } from '../ComponentProps';
+import { getFontColorByBackground } from '../Theme/Color/Utils';
 import { ThemeStore } from '../Theme/ThemeStore';
+import { Text } from '../Typography/Text';
 
 interface ProgressBarProps extends ComponentProps {
   rounded?: boolean;
   value: number;
   max: number;
   animated?: boolean;
+  withText?: boolean;
 }
 const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
   const themeStore = ThemeStore.useContainer();
@@ -27,6 +30,14 @@ const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
     border-bottom-left-radius: ${props.rounded ? '100px' : undefined};
     height: 100%;
     width: ${props.value.toString()}%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  `;
+
+  const textStyles = css`
+    color: ${getFontColorByBackground(props.variant, colorTheme)};
+    margin-right: 4px;
   `;
 
   const variants: Variants = {
@@ -47,8 +58,12 @@ const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
           initial='hidden'
           animate='visible'
           variants={variants}
-        /> :
-        <div className={innerProgressBarStyles}/>
+        >
+          { props.withText ? <Text size='info' styles={textStyles}>{props.value}</Text> : null }
+        </motion.div> :
+        <div className={innerProgressBarStyles}>
+        { props.withText ? <Text size='info' styles={textStyles}>{props.value}</Text> : null }
+        </div>
       }
     </div>
   );
@@ -56,7 +71,8 @@ const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
 ProgressBar.defaultProps = {
   variant: 'primary',
   rounded: false,
-  animated: false
+  animated: false,
+  withText: false
 };
 
 export {
