@@ -28,15 +28,15 @@ var ProgressBar = react_1.default.memo(function (props) {
         }
     };
     return (react_1.default.createElement("div", { className: emotion_1.cx(progressBarStyles, props.styles) }, props.animated ?
-        react_1.default.createElement(framer_motion_1.motion.div, { className: innerProgressBarStyles, initial: 'hidden', animate: 'visible', variants: variants }, props.withText ? react_1.default.createElement(Text_1.Text, { size: 'info', styles: textStyles }, props.value) : null) :
-        react_1.default.createElement("div", { className: innerProgressBarStyles }, props.withText ? react_1.default.createElement(Text_1.Text, { size: 'info', styles: textStyles }, props.value) : null)));
+        react_1.default.createElement(framer_motion_1.motion.div, { className: innerProgressBarStyles, initial: 'hidden', animate: 'visible', variants: variants }, props.withText ? react_1.default.createElement(Text_1.Text, { size: 'info', styles: textStyles }, props.withText) : null) :
+        react_1.default.createElement("div", { className: innerProgressBarStyles }, props.withText ? react_1.default.createElement(Text_1.Text, { size: 'info', styles: textStyles }, props.withText) : null)));
 });
 exports.ProgressBar = ProgressBar;
 ProgressBar.defaultProps = {
     variant: 'primary',
     rounded: false,
     animated: false,
-    withText: false
+    withText: null
 };
 var templateObject_1, templateObject_2, templateObject_3;
 //# sourceMappingURL=ProgressBar.js.map

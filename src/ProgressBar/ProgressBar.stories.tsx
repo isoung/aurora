@@ -32,7 +32,6 @@ storiesOf('Progress Bars', module)
             variant={variant}
             rounded={boolean('rounded', false)}
             animated={boolean('animated', false)}
-            withText={boolean('with text', false)}
             value={15}
             max={100}
           />

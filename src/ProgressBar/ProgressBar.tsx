@@ -12,7 +12,7 @@ interface ProgressBarProps extends ComponentProps {
   value: number;
   max: number;
   animated?: boolean;
-  withText?: boolean;
+  withText?: string;
 }
 const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
   const themeStore = ThemeStore.useContainer();
@@ -59,10 +59,10 @@ const ProgressBar: React.FC<ProgressBarProps> = React.memo((props) => {
           animate='visible'
           variants={variants}
         >
-          { props.withText ? <Text size='info' styles={textStyles}>{props.value}</Text> : null }
+          { props.withText ? <Text size='info' styles={textStyles}>{props.withText}</Text> : null }
         </motion.div> :
         <div className={innerProgressBarStyles}>
-        { props.withText ? <Text size='info' styles={textStyles}>{props.value}</Text> : null }
+        { props.withText ? <Text size='info' styles={textStyles}>{props.withText}</Text> : null }
         </div>
       }
     </div>
@@ -72,7 +72,7 @@ ProgressBar.defaultProps = {
   variant: 'primary',
   rounded: false,
   animated: false,
-  withText: false
+  withText: null
 };
 
 export {
