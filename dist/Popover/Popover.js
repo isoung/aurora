@@ -50,7 +50,7 @@ var Popover = function (props) {
                 colorTheme: themeStore.getColorTheme(),
                 fontTheme: themeStore.getFontTheme(),
             } },
-            react_1.default.createElement("div", __assign({ ref: setPopperElement, style: styles.popper }, attributes.popper),
+            react_1.default.createElement("div", __assign({ ref: setPopperElement, style: __assign(__assign({}, styles.popper), { zIndex: 9999999 }) }, attributes.popper),
                 props.content,
                 react_1.default.createElement("div", { ref: setArrowElement, style: styles.arrow })))) : null, bodyElement)));
 };

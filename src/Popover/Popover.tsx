@@ -49,7 +49,8 @@ const Popover: React.FC<PopoverProps> = (props) => {
             }}>
             <div
               ref={setPopperElement}
-              style={styles.popper} {...attributes.popper}
+              style={{...styles.popper, ...{ zIndex: 9999999 }}}
+              {...attributes.popper}
             >
               {props.content}
               <div ref={setArrowElement} style={styles.arrow}/>
