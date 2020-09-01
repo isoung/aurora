@@ -24,3 +24,7 @@ export * from './Modal/FullScreenModalFooter';
 export * from './Modal/FullScreenModalTitle';
 export * from './Modal/Modal';
 export * from './Modal/ModalBackButton';
+export * from './Popover/Popover';
+export * from './Dropdown/Dropdown';
+export * from './Dropdown/DropdownDivider';
+export * from './Dropdown/DropdownItem';

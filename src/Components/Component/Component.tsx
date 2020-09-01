@@ -96,6 +96,7 @@ export interface ComponentProps extends StyleProps {
   paddingTop?: string;
   paddingRight?: string;
   paddingBottom?: string;
+  onClick?: (e: any) => void;
 }
 const Component: React.FC<ComponentProps> = (props) => {
   const {
@@ -151,7 +152,7 @@ const Component: React.FC<ComponentProps> = (props) => {
 
   return React.createElement(
     element ? element : tag,
-    {...baseComponentProps, ...{ className: cx(baseStyles, props.styles) }} as any
+    {...baseComponentProps, ...{ className: cx(baseStyles, props.styles), onClick: props.onClick }} as any
   );
 };
 Component.displayName = 'Component';

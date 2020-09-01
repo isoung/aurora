@@ -4,7 +4,7 @@ import React from 'react';
 import { Component, ComponentProps } from '../Component/Component';
 import { MediaQueries } from '../MediaQueries';
 
-export interface ContainerProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
+export interface ContainerProps extends ComponentProps, Omit<React.HTMLAttributes<HTMLElement>, 'onClick'> {
   flexGrow?: string;
   borderBox?: boolean;
 }

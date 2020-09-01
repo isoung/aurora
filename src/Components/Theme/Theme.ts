@@ -29,15 +29,15 @@ export const generateTheme = <T = any>(theme: T): T => {
 };
 
 export const DefaultColorTheme: ColorVariants = {
-  primary: '#2D3047',
+  primary: '#1C2541',
   secondary: '#F6AD55',
   danger: '#F45B69',
   success: '#48BB78',
   warning: '#ECC94B',
   link: '#3182ce',
-  light: '#DEE7E7',
+  light: '#EEF0EB',
   dark: '#b9babe',
-  white: '#FBFBFF',
+  white: '#FFFFFF',
   black: '#061826'
 };
 
