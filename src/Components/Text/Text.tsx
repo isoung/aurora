@@ -2,7 +2,7 @@ import { css, cx } from 'emotion';
 import { useTheme } from 'emotion-theming';
 import React from 'react';
 
-import { Component, ComponentProps, FontComponentSize, Theme } from '../';
+import { Component, ComponentProps, FontComponentSize, Theme } from '..';
 
 type TextAlign =
   'left'

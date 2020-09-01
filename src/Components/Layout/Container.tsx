@@ -4,7 +4,7 @@ import React from 'react';
 import { Component, ComponentProps } from '../Component/Component';
 import { MediaQueries } from '../MediaQueries';
 
-interface ContainerProps extends ComponentProps {
+export interface ContainerProps extends ComponentProps, React.HTMLAttributes<HTMLElement> {
   flexGrow?: string;
   borderBox?: boolean;
 }

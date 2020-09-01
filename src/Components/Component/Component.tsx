@@ -66,11 +66,14 @@ type AlignItems =
   | 'safe center'
   | 'unsafe center';
 
-export interface ComponentProps {
+export interface StyleProps {
+  styles?: string;
+}
+
+export interface ComponentProps extends StyleProps {
   tag?: string;
   element?: React.FunctionComponent;
   variant?: ComponentVariants;
-  styles?: string;
   display?: Display;
   justifyContent?: JustifyContent;
   flexFlow?: FlexFlow;

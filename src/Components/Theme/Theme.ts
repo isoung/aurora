@@ -33,7 +33,7 @@ export const DefaultColorTheme: ColorVariants = {
   secondary: '#F6AD55',
   danger: '#F45B69',
   success: '#48BB78',
-  warning: '#F6E05E',
+  warning: '#ECC94B',
   link: '#3182ce',
   light: '#DEE7E7',
   dark: '#b9babe',
@@ -48,11 +48,11 @@ export const DefaultTheme: Theme = {
   colors: DefaultColorTheme
   ,
   fonts: {
-    small: '12px',
-    normal: '15px',
-    medium: '20px',
-    large: '32px',
-    extraLarge: '40px'
+    sm: '12px',
+    base: '15px',
+    md: '20px',
+    lg: '32px',
+    xl: '40px'
   },
   components: generateTheme(DefaultThemeComponents)
 };
