@@ -30,7 +30,7 @@ export const generateTheme = <T = any>(theme: T): T => {
 
 export const DefaultColorTheme: ColorVariants = {
   primary: '#2D3047',
-  secondary: '#F19A3E',
+  secondary: '#F6AD55',
   danger: '#F45B69',
   success: '#48BB78',
   warning: '#F6E05E',

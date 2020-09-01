@@ -1,14 +1,14 @@
 export type FontComponentSize =
-  'small'
-  | 'normal'
-  | 'medium'
-  | 'large'
-  | 'extraLarge';
+  'sm'
+  | 'base'
+  | 'md'
+  | 'lg'
+  | 'xl';
 
 export interface FontTheme {
-  small: string;
-  normal: string;
-  medium: string;
-  large: string;
-  extraLarge: string;
+  sm: string;
+  base: string;
+  md: string;
+  lg: string;
+  xl: string;
 }

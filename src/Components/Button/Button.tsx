@@ -3,7 +3,7 @@ import { css, cx } from 'emotion';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import React from 'react';
 
-import { Component, ComponentProps, useTheme } from '..';
+import { Component, ComponentProps, getHoveredColor, useTheme } from '..';
 
 const onButtonHover = (colorString: string, lighten: number = .1, darken: number = .2): string => {
   const color = Color(colorString);
@@ -12,6 +12,7 @@ const onButtonHover = (colorString: string, lighten: number = .1, darken: number
 
 interface ButtonProps extends ComponentProps, HTMLMotionProps<'button'> {
   rounded?: boolean;
+  ghost?: boolean;
 }
 const Button: React.FC<ButtonProps> = (props) => {
   const colors = useTheme().colors;
@@ -19,17 +20,18 @@ const Button: React.FC<ButtonProps> = (props) => {
   const {
     styles,
     rounded,
+    ghost,
     variant,
     ...componentProps
   } = props;
 
   const buttonStyles = css`
-    background-color: ${colors[variant]};
-    color: #fff;
+    background-color: ${ghost ? colors['white'] : colors[variant]};
+    color: ${ghost ? colors['black'] : getHoveredColor(colors[variant])};
     cursor: ${props.disabled ? 'not-allowed' : 'pointer'};
-    padding: 8px 16px;
+    padding: 12px 20px;
     border-radius: ${rounded ? '100px' : '8px'};
-    border: 1px solid transparent;
+    border: 2px solid ${ghost ? colors[variant] : 'transparent'};
     outline: none;
     transition: background-color 150ms;
 
@@ -43,6 +45,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
     &:hover {
       background-color: ${onButtonHover(colors[variant])};
+      color: ${getHoveredColor(colors[variant])};
     }
 
     i:first-child:not(:last-child) {
