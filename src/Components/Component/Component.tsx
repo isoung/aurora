@@ -1,7 +1,7 @@
 import { css, cx } from 'emotion';
 import React from 'react';
 
-import { BoxShadow, GenerateBoxShadows } from '../Theme/BoxShadow';
+import { BoxShadow, ComponentVariants, GenerateBoxShadows } from '..';
 
 type Display =
   'inline'
@@ -66,14 +66,23 @@ type AlignItems =
   | 'safe center'
   | 'unsafe center';
 
-export interface ComponentProps extends React.HTMLAttributes<Element> {
+export interface ComponentProps {
   tag?: string;
+  element?: React.FunctionComponent;
+  variant?: ComponentVariants;
   styles?: string;
   display?: Display;
   justifyContent?: JustifyContent;
   flexFlow?: FlexFlow;
   alignItems?: AlignItems;
   boxShadow?: boolean | BoxShadow;
+  rounded?: boolean;
+  height?: string;
+  minHeight?: string;
+  maxHeight?: string;
+  width?: string;
+  minWidth?: string;
+  maxWidth?: string;
   margin?: string;
   marginLeft?: string;
   marginTop?: string;
@@ -87,11 +96,19 @@ export interface ComponentProps extends React.HTMLAttributes<Element> {
 }
 const Component: React.FC<ComponentProps> = (props) => {
   const {
+    element,
+    tag,
     display,
     justifyContent,
     flexFlow,
     alignItems,
     boxShadow,
+    height,
+    minHeight,
+    maxHeight,
+    width,
+    minWidth,
+    maxWidth,
     margin,
     marginLeft,
     marginTop,
@@ -111,6 +128,12 @@ const Component: React.FC<ComponentProps> = (props) => {
     flex-flow: ${flexFlow};
     align-items: ${alignItems};
     ${GenerateBoxShadows(boxShadow)};
+    height: ${height};
+    min-height: ${minHeight};
+    max-height: ${maxHeight};
+    width: ${width};
+    min-width: ${minWidth};
+    max-width: ${maxWidth};
     margin: ${margin};
     margin-left: ${marginLeft};
     margin-top: ${marginTop};
@@ -123,7 +146,10 @@ const Component: React.FC<ComponentProps> = (props) => {
     padding-bottom: ${paddingBottom};
   `;
 
-  return React.createElement(props.tag, {...baseComponentProps, ...{ className: cx(baseStyles, props.styles) }});
+  return React.createElement(
+    element ? element : tag,
+    {...baseComponentProps, ...{ className: cx(baseStyles, props.styles) }} as any
+  );
 };
 Component.displayName = 'Component';
 Component.defaultProps = {

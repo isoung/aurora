@@ -1,8 +1,14 @@
+import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import React from 'react';
 
-const ThemeProvider: React.FC = () => {
+import { DefaultTheme, DefaultThemeComponents, generateTheme } from './Theme';
+
+const ThemeProvider: React.FC = (props) => {
   return (
-    <div></div>
+    <EmotionThemeProvider theme={(ancestor: any) =>
+      ({...DefaultTheme, themeComponents: generateTheme(DefaultThemeComponents)})}>
+      {props.children}
+    </EmotionThemeProvider>
   );
 };
 ThemeProvider.displayName = 'ThemeProvider';

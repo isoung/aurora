@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "build",
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "emitDecoratorMetadata": true,

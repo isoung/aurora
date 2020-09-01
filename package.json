@@ -2,14 +2,14 @@
   "name": "aurora",
   "version": "0.2.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "dev": "parcel ./src/index.html -p 3000",
     "dev:typescript": "tsc -p . --noEmit --watch",
     "dev:components": "start-storybook -p 9557",
     "start": "concurrently --kill-others \"npm:dev:typescript\" \"npm:dev\"",
-    "build": "rm -rf dist && parcel build ./src/index.html && cp _redirects dist/_redirects",
+    "build": "rm -rf build && parcel build ./src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Isaiah Soung",
@@ -27,9 +27,11 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.35",
     "@popperjs/core": "^2.3.3",
     "color": "^3.1.2",
     "emotion": "^10.0.27",
+    "emotion-theming": "^10.0.27",
     "facepaint": "^1.2.1",
     "framer-motion": "^1.8.4",
     "react": "^16.12.0",
