@@ -16,7 +16,7 @@ const Label: React.FC<TextComponentProps> = (props) => {
   `;
 
   return (
-    <Text tag='span' {...textProps} styles={cx(labelStyles, styles)}>{props.children}</Text>
+    <Text tag='label' {...textProps} styles={cx(labelStyles, styles)}>{props.children}</Text>
   );
 };
 Label.defaultProps = {

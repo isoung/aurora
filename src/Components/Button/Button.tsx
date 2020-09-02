@@ -10,7 +10,7 @@ const onButtonHover = (colorString: string, lighten: number = .1, darken: number
   return color.isDark() ? color.darken(darken).toString() : color.lighten(lighten).toString();
 };
 
-export interface ButtonProps extends ComponentProps, HTMLMotionProps<'button'> {
+export interface ButtonProps extends ComponentProps, Omit<HTMLMotionProps<'button'>, 'onClick'> {
   rounded?: boolean;
   ghost?: boolean;
 }
