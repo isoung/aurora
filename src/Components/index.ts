@@ -36,3 +36,4 @@ export * from './InteractableProps';
 export * from './Icon/Icon';
 export * from './Layout/Hero';
 export * from './Button/ButtonGroup';
+export * from './Avatar/Avatar';
