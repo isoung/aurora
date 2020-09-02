@@ -9,7 +9,9 @@ const Subtitle: React.FC<TextComponentProps> = (props) => {
 };
 Subtitle.defaultProps = {
   size: 'base',
-  weight: 300
+  weight: 300,
+  marginTop: '12px',
+  marginBottom: '12px'
 };
 
 export {

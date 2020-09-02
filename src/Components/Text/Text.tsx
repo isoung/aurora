@@ -19,7 +19,7 @@ export interface TextComponentProps extends ComponentProps {
   textAlign?: TextAlign;
 }
 
-export interface TextProps extends TextComponentProps, React.HTMLAttributes<HTMLSpanElement> {
+export interface TextProps extends TextComponentProps, Omit<React.HTMLAttributes<HTMLSpanElement>, 'onClick'> {
   tag?: string;
   default?: boolean;
 }

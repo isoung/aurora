@@ -38,7 +38,7 @@ export const DefaultColorTheme: ColorVariants = {
   light: '#EEF0EB',
   dark: '#b9babe',
   white: '#FFFFFF',
-  black: '#061826'
+  black: '#363636'
 };
 
 export const DefaultThemeComponents = {

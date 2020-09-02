@@ -34,3 +34,4 @@ export * from './Form/Input';
 export * from './Form/InputIcon';
 export * from './InteractableProps';
 export * from './Icon/Icon';
+export * from './Layout/Hero';
