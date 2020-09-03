@@ -4,6 +4,7 @@ import React from 'react';
 import {
   ButtonProps,
   Container,
+  Icon,
   Text,
   useTheme
 } from '..';
@@ -42,7 +43,7 @@ const ModalBackButton: React.FC<ButtonProps> = (props) => {
       alignItems='center'
       onClick={props.onClick}
     >
-      {/* <Icon icon='far fa-arrow-left' variant='black'/> */}
+      <Icon icon='far fa-arrow-left' variant='black'/>
       <Text>Back</Text>
     </Container>
   );
