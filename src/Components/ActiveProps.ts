@@ -1,4 +1,4 @@
 export interface ActiveProps {
   active?: boolean;
-  onClick?: (e: any) => void;
+  onClick?: (e?: any) => void;
 }

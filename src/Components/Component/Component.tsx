@@ -96,7 +96,7 @@ export interface ComponentProps extends StyleProps {
   paddingTop?: string;
   paddingRight?: string;
   paddingBottom?: string;
-  onClick?: (e: any) => void;
+  onClick?: (e?: any) => void;
 }
 const Component: React.FC<ComponentProps> = (props) => {
   const {

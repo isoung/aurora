@@ -26,7 +26,7 @@
   },
   "exclude": ["node_modules", "build", "scripts", "src/**/*.stories.*"],
   "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts"
+    "./src/Components/**.tsx",
+    "./src/Components/**.ts"
   ]
 }

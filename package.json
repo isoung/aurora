@@ -9,7 +9,7 @@
     "dev:typescript": "tsc -p . --noEmit --watch",
     "dev:components": "start-storybook -p 9557",
     "start": "concurrently --kill-others \"npm:dev:typescript\" \"npm:dev\"",
-    "build": "rm -rf build && parcel build ./src/index.html",
+    "build": "rm -rf build && tsc -p tsconfig.dist.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Isaiah Soung",
